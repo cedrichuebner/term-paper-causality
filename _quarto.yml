@@ -1,0 +1,13 @@
+project:
+  type: manuscript
+
+manuscript:
+  article: index.qmd
+  meca-bundle: false
+
+execute:
+  freeze: auto
+
+format:
+  html:
+    toc: true
