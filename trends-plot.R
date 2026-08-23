@@ -4,8 +4,6 @@ library(tidyverse)
 variables <- c("hours1", "iso2", "year", "sex", "pwgt", "marital", "age")
 countries <- c("lu", "be", "fr", "de", "es", "ie", "pl")
 
-lissyrtools::lis_variables
-
 lis_datasets <- lissyuse(data = countries, vars  = variables, from = 2012, to = 2023)
 
 names(lis_datasets)

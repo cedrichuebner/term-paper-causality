@@ -13,8 +13,125 @@ This files combines the steps of our analysis. Since any analysis of the LIS dat
 ```
 
 Output:
-
 ```{r}
-
+#| eval: false
+> options(
++ 	echo = FALSE, 
++ 	encoding = "UTF-8"
++ )
+Loading required package: readstata13
+> 
+> options(error = expression(q('no')))
+> library(lissyrtools)
+Loading required package: haven
+Warning message:
+package ‘lissyrtools’ was built under R version 4.5.2 
+> library(tidyverse)
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.6
+✔ forcats   1.0.1     ✔ stringr   1.6.0
+✔ ggplot2   4.0.1     ✔ tibble    3.3.0
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.2.0     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+> variables <- c("hours1", "iso2", "year", "sex", "pwgt", "marital", "age")
+> countries <- c("lu", "be", "fr", "de", "es", "ie", "pl")
+> lissyrtools::lis_variables
+  [1] "hid"        "dhi"        "hitotal"    "hifactor"   "hitransfer"
+  [6] "hilabour"   "hi11"       "hi12"       "hi121"      "hi13"      
+ [11] "hi14"       "hicapital"  "hi21"       "hi22"       "hipension" 
+ [16] "hi31"       "hi311"      "hi312"      "hi32"       "hi33"      
+ [21] "hi331"      "hi332"      "hpublic"    "hpub_i"     "hpub_u"    
+ [26] "hpub_a"     "hipubsoc"   "hi41"       "hi411"      "hi412"     
+ [31] "hi42"       "hi421"      "hi422"      "hi43"       "hi44"      
+ [36] "hi45"       "hi46"       "hi47"       "hi471"      "hiprivate" 
+ [41] "hi51"       "hi511"      "hi52"       "hi521"      "hi522"     
+ [46] "hi53"       "hi531"      "hi532"      "dhci"       "hvalgs"    
+ [51] "hxitsc"     "hxitax"     "hxscont"    "hxotax"     "hxptax"    
+ [56] "hxvcont"    "hxiht"      "hxalim"     "hxremit"    "hxmort"    
+ [61] "hxintm"     "hxloan"     "hxintl"     "hhouscost"  "hrenti"    
+ [66] "hcexp"      "hc1"        "hc2"        "hc3"        "hc4"       
+ [71] "hc41"       "hc5"        "hc6"        "hc7"        "hc8"       
+ [76] "hc9"        "hc10"       "hc11"       "hc12"       "helabour"  
+ [81] "hecgain"    "heinherit"  "heoth"      "nearn"      "region_c"  
+ [86] "locsz_c"    "area_c"     "rural"      "own"        "dweltyp"   
+ [91] "farming"    "did"        "dname"      "cname"      "iso2"      
+ [96] "iso3"       "year"       "wave"       "currency"   "grossnet"  
+[101] "nhhmem"     "nhhmem65"   "nhhmem17"   "nhhmem13"   "hhtype"    
+[106] "hpartner"   "hwgt"       "hpopwgt"    "hwgta"      "nrooms"    
+[111] "typehh"     "nhhmem6"    "pid"        "pitotal"    "pilabour"  
+[116] "pi11"       "pi12"       "pi13"       "pipension"  "pi31"      
+[121] "pi311"      "pi312"      "pi32"       "pi332"      "pi33"      
+[126] "pi331"      "ppub_i"     "pi411"      "pi42"       "pi421"     
+[131] "pi422"      "pi43"       "pi44"       "pi511"      "pelabour"  
+[136] "pxitax"     "pxscont"    "pxitsc"     "pxvcont"    "lfs"       
+[141] "emp"        "emp_ilo"    "informal"   "parleave"   "secjob"    
+[146] "weeks"      "hours1"     "hourstot"   "ptime1"     "status1"   
+[151] "temp1"      "public1"    "ind1_c"     "indd1"      "indc1"     
+[156] "indb1"      "inda1"      "occ1_c"     "occb1"      "occa1"     
+[161] "fyft"       "wexptl"     "enroll"     "educ_c"     "educlev"   
+[166] "educ"       "illiterate" "edyrs"      "edmom_c"    "eddad_c"   
+[171] "ctrybrth"   "citizen"    "yrsresid"   "ethnic_c"   "migrat_c"  
+[176] "immigr_c"   "immigr"     "disabled"   "health_c"   "age"       
+[181] "sex"        "marital"    "relation"   "partner"    "parents"   
+[186] "nchildren"  "ageyoch"    "pwgt"       "ppopwgt"    "pwgta"     
+[191] "depchild"   "oneparent"  "momnum"     "dadnum"     "partnum"   
+[196] "wage1"      "hwage1"     "occc1"      "weeksft"   
+> lis_datasets <- lissyuse(data = countries, vars  = variables, from = 2012, to = 2023)
+The list contains the following `person-level` data frames: be23p, be22p, be21p, be20p, be19p, be18p, be17p, be16p, be15p, be14p, be13p, be12p, fr22p, fr21p, fr20p, fr19p, fr18p, fr17p, fr16p, fr15p, fr14p, fr13p, fr12p, de22p, de21p, de20p, de19p, de18p, de17p, de16p, de15p, de14p, de13p, de12p, ie23p, ie22p, ie21p, ie20p, ie19p, ie18p, ie17p, ie16p, ie15p, ie14p, ie13p, ie12p, lu23p, lu22p, lu21p, lu20p, lu19p, lu18p, lu17p, lu16p, lu15p, lu14p, lu13p, lu12p, pl23p, pl22p, pl21p, pl20p, pl19p, pl18p, pl17p, pl16p, pl15p, pl14p, pl13p, pl12p, es22p, es21p, es20p, es19p, es18p, es17p, es16p, es15p, es14p, es13p, es12p.
+ 
+> names(lis_datasets)
+ [1] "be23p" "be22p" "be21p" "be20p" "be19p" "be18p" "be17p" "be16p" "be15p"
+[10] "be14p" "be13p" "be12p" "fr22p" "fr21p" "fr20p" "fr19p" "fr18p" "fr17p"
+[19] "fr16p" "fr15p" "fr14p" "fr13p" "fr12p" "de22p" "de21p" "de20p" "de19p"
+[28] "de18p" "de17p" "de16p" "de15p" "de14p" "de13p" "de12p" "ie23p" "ie22p"
+[37] "ie21p" "ie20p" "ie19p" "ie18p" "ie17p" "ie16p" "ie15p" "ie14p" "ie13p"
+[46] "ie12p" "lu23p" "lu22p" "lu21p" "lu20p" "lu19p" "lu18p" "lu17p" "lu16p"
+[55] "lu15p" "lu14p" "lu13p" "lu12p" "pl23p" "pl22p" "pl21p" "pl20p" "pl19p"
+[64] "pl18p" "pl17p" "pl16p" "pl15p" "pl14p" "pl13p" "pl12p" "es22p" "es21p"
+[73] "es20p" "es19p" "es18p" "es17p" "es16p" "es15p" "es14p" "es13p" "es12p"
+> lis_all <- lis_datasets |>
++   imap(\(df, nm) df |>
++          select(any_of(variables)) |>
++          mutate(iso2 = substr(nm, 1, 2),
++                 year = 2000L + as.integer(substr(nm, 3, 4)))) |>
++   bind_rows() |>
++   transmute(country = iso2, year,
++             female  = as.integer(sex) - 1L,
++             hours   = as.numeric(hours1),
++             weight  = as.numeric(pwgt),
++             married = as.integer(marital) %in% c(100, 110),
++             agew    = age >= 20 & age <= 55,
++             treat   = as.integer(iso2 == "lu" & year >= 2018))
+> # Plot 1
+> p1_data <- lis_all |>
++   filter(!is.na(hours), hours >= 0, !is.na(weight),
++          female == 1, agew, married) |>
++   group_by(country, year) |>
++   summarise(mean_hours = weighted.mean(hours, w = weight, na.rm = TRUE),
++             n_cell     = n(),
++             .groups    = "drop")
+> p1 <- ggplot(p1_data, aes(x = year, y = mean_hours, color = country)) +
++   geom_line(linewidth = 0.5) +
++   geom_point(size = 1) +
++   geom_vline(xintercept = 2018, linetype = "dashed", linewidth = 0.3) +
++   scale_x_continuous(breaks = 2012:2023, limits = c(2012, 2023)) +
++   labs(title = "Hours Worked (Main Job) of partnered women aged 20–55",
++        x = "Year", y = "Mean weekly hours (weighted)", color = "Country") +
++   theme_minimal()
+> print(png(file = paste0(USR_PDF, "/p1.png"),
++           width = 1500, height = 900, res = 150))
+NULL
+> print(p1)
+> dev.off()
+null device 
+          1 
+> 
+> proc.time()
+   user  system elapsed 
+ 11.548   1.252  18.691
 ```
 
