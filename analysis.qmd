@@ -1,0 +1,14 @@
+---
+title: "Analysis"
+---
+
+This files combines the steps of our analysis.
+
+## Trend plot
+
+```{r}
+#| eval: false
+#| file: trends-plot.R
+#| filename: trends-plot.R
+```
+```
