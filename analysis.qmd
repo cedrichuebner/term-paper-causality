@@ -2,7 +2,7 @@
 title: "Analysis"
 ---
 
-This files combines the steps of our analysis.
+This files combines the steps of our analysis. Since any analysis of the LIS dataset has to be performed in a secured environment the following code is not reproducible on its own. To ensure transparency we provide the input code and the respective outputs below.
 
 ## Trend plot
 
@@ -11,4 +11,10 @@ This files combines the steps of our analysis.
 #| file: trends-plot.R
 #| filename: trends-plot.R
 ```
+
+Output:
+
+```{r}
+
 ```
+
