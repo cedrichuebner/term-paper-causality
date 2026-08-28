@@ -37,5 +37,12 @@ lis_est <- lis_all |> filter(female == 1, married, agew)
 
 # Model 1 (w/o controls)
 
-m1 <- feols (hours ~ treat | country + year, data = lis_est, weights = ~weight)
+m1 <- feols (hours ~ treat | country + year, data = lis_est, weights = ~weight, cluster = ~country)
+
 print(m1)
+ct <- summary(m1)$coeftable
+cat("coef:", round(ct["treat", 1], 4), "\n")
+cat("se:  ", round(ct["treat", 2], 4), "\n")
+cat("t:   ", round(ct["treat", 3], 3), "\n")
+cat("p:   ", round(ct["treat", 4], 5), "\n")
+cat("N:   ", nobs(m1), "\n")
