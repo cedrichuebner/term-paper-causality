@@ -29,7 +29,7 @@ lis_all <- lis_datasets |>
             edu    = as.factor(educ),
             child  = case_when(
                         nchildren > 0 ~ 1,
-                        nchildren = 0 ~ 0))
+                        nchildren == 0 ~ 0))
 
 # Diagnostics
 
@@ -49,7 +49,7 @@ m1 <- feols (hours ~ treat | country + year, data = lis_est, weights = ~weight, 
 
 # Model 2 (w/ controls)
 
-m2 <- feols (hours ~ treat + edu + children | country + year, data = lis_est, weights = ~weight, cluster = ~country)
+m2 <- feols (hours ~ treat + edu + child | country + year, data = lis_est, weights = ~weight, cluster = ~country)
 
 # Robustness checks
 
@@ -70,7 +70,8 @@ m4 <- feols (hours ~ treat | country + year, data = lis_est_unmarried, weights =
 models <- list("Baseline" = m1, "Baseline with controls" = m2, "Placebo (married men)" = m3, "Placebo (never married women)" = m4)
 
 etable(models, se.below = TRUE, digits = 3,
-       fitstat = ~ n + r2 + wr2, #drop = "age"
+       fitstat = ~ n + r2 + wr2
+       #drop = "age"
        )
 
 cat(etable(models, tex = TRUE, digits = 3, fitstat = ~ n + r2), sep = "\n")
