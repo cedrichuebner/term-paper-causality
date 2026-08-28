@@ -26,11 +26,11 @@ lis_all <- lis_datasets |>
 
 # Diagnostics
 
-table(lis_all$treat, useNA = "ifany")
-table(lis_all$country, lis_all$year)
-class(lis_all$marital); attr(lis_all$marital, "labels")
-table(lis_all$married, useNA = "ifany")
-table(lis_all$female, useNA = "ifany")
+#table(lis_all$treat, useNA = "ifany")
+#table(lis_all$country, lis_all$year)
+#class(lis_all$marital); attr(lis_all$marital, "labels")
+#table(lis_all$married, useNA = "ifany")
+#table(lis_all$female, useNA = "ifany")
 
 # Preparing subset for estimating the models
 
@@ -53,4 +53,11 @@ m2 <- feols (hours ~ treat | country + year, data = lis_est, weights = ~weight, 
 lis_est <- lis_all |> filter(female == 1, never_married, agew)
 
 m3 <- feols (hours ~ treat | country + year, data = lis_est, weights = ~weight, cluster = ~country)
+
+# Model output
+
+models <- list("Baseline" = m1, "Placebo (married men)" = m2, "Placebo (never married women)" = m3)
+
+etable(models, se.below = TRUE, digits = 3,
+       fitstat = ~ n + r2 + wr2, drop = "age")
 
