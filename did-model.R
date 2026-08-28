@@ -2,7 +2,7 @@ library(lissyrtools)
 library(tidyverse)
 library(fixest)
 
-variables <- c("hours1", "iso2", "year", "sex", "pwgt", "marital", "age", "educ", "nchildren")
+variables <- c("hours1", "iso2", "year", "sex", "pwgt", "marital", "age", "educ", "nchildren", "lfs")
 countries <- c("lu", "be", "fr", "de", "es", "ie") # Removed Poland because of missing hour variable
 
 lis_datasets <- lissyuse(data = countries, vars  = variables, from = 2012, to = 2023)
@@ -17,7 +17,9 @@ lis_all <- lis_datasets |>
   bind_rows() |>
   transmute(country = iso2, year,
             female  = as.integer(sex) - 1L,
-            hours   = as.numeric(hours1),
+            hours   = case_when(
+                        lfs %in% c(200, 300, 340) & is.na(hours1) ~ 0,
+                        TRUE ~ as.numeric(hours1)),
             weight  = as.numeric(pwgt),
             married = as.integer(marital) %in% c(100, 110),
             never_married = as.integer(marital) == 210,
@@ -26,8 +28,8 @@ lis_all <- lis_datasets |>
             # Controls
             edu    = as.factor(educ),
             child  = case_when(
-                      nchildren > 0 ~ 1,
-                      nchildren = 0 ~ 0))
+                        nchildren > 0 ~ 1,
+                        nchildren = 0 ~ 0))
 
 # Diagnostics
 
