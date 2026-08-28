@@ -20,6 +20,7 @@ lis_all <- lis_datasets |>
             hours   = as.numeric(hours1),
             weight  = as.numeric(pwgt),
             married = as.integer(marital) %in% c(100, 110),
+            never_married = as.integer(marital) == 210,
             agew    = age >= 20 & age <= 55,
             treat   = as.integer(iso2 == "lu" & year >= 2018))
 
@@ -39,10 +40,17 @@ lis_est <- lis_all |> filter(female == 1, married, agew)
 
 m1 <- feols (hours ~ treat | country + year, data = lis_est, weights = ~weight, cluster = ~country)
 
-print(m1)
-ct <- summary(m1)$coeftable
-cat("coef:", round(ct["treat", 1], 4), "\n")
-cat("se:  ", round(ct["treat", 2], 4), "\n")
-cat("t:   ", round(ct["treat", 3], 3), "\n")
-cat("p:   ", round(ct["treat", 4], 5), "\n")
-cat("N:   ", nobs(m1), "\n")
+# Robustness checks
+
+# Model 2: Treatment group = married men
+
+lis_est <- lis_all |> filter(female == 0, married, agew)
+
+m2 <- feols (hours ~ treat | country + year, data = lis_est, weights = ~weight, cluster = ~country)
+
+# Model 3: Treatment group = unmarried women
+
+lis_est <- lis_all |> filter(female == 1, never_married, agew)
+
+m3 <- feols (hours ~ treat | country + year, data = lis_est, weights = ~weight, cluster = ~country)
+
