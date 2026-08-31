@@ -1,10 +1,6 @@
 ---
 title: "Does optional individual taxation increase female labor supply?"
 subtitle: "Evidence from the 2018 Luxembourg Reform"
-author:
-  - name: "Cédric Hübner"
-  - name: "Nadine Theisen"
-  - name: "Kwangho Yo"
 abstract: "Increasing women’s participation in the labor market is an important policy goal. However, in countries where married couples are taxed based on their shared income instead of individually, the nature of that system can disincentivize women from working more. Previous reforms toward individual taxation have proven effective in increasing the working hours of women. This paper investigates whether a 2018 reform in Luxembourg, which gave married couples the option to choose between joint and individual taxation, had the same effect. Based on models of utility maximization and intra-household bargaining, we assume that such a reform leads to an increase in working hours even though the change is not mandatory. Our analysis uses a difference-in-differences approach on individual-level data from Luxembourg and five other countries between 2012 and 2022. The resulting models show no effect of the reform on the working hours of women when controlling for education and children. However, the results are inconclusive, primarily due to methodological limitations and potential external influences. "
 date: today
 date-format: long
