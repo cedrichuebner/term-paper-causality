@@ -276,23 +276,5 @@ Munich, {{< meta date >}}
 \
 \
 
-```{=typst}
-#let signature(name) = block(width: 100%)[
-  #v(3em)
-  #line(length: 100%, stroke: 0.5pt)
-  #v(-0.6em)
-  #set text(size: 9pt)
-  #name
-]
-
-#grid(
-  columns: (1fr, 1fr, 1fr),
-  column-gutter: 1.5em,
-  signature[Cédric Hübner],
-  signature[Nadine Theisen],
-  signature[Kwangho Yo],
-)
-```
-
 
 
