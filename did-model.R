@@ -74,4 +74,17 @@ etable(models, se.below = TRUE, digits = 3,
        #drop = "age"
        )
 
-cat(etable(models, tex = TRUE, digits = 3, fitstat = ~ n + r2), sep = "\n")
+res <- rbind(
+  broom::tidy(m1) |> transform(model = 1),
+  broom::tidy(m2) |> transform(model = 2),
+  broom::tidy(m3) |> transform(model = 3),
+  broom::tidy(m4) |> transform(model = 4)
+)
+gof <- data.frame(
+  model = 1:4,
+  nobs  = sapply(list(m1,m2,m3,m4), nobs),
+  r2    = sapply(list(m1,m2,m3,m4), function(x) fixest::r2(x, "r2"))
+)
+write.csv(res, row.names = FALSE)
+cat("---GOF---\n")
+write.csv(gof, row.names = FALSE)

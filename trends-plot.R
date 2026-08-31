@@ -3,6 +3,14 @@ library(tidyverse)
 
 variables <- c("hours1", "iso2", "year", "sex", "pwgt", "marital", "age")
 countries <- c("lu", "be", "fr", "de", "es", "ie", "pl")
+country_names <- c(
+  lu = "Luxembourg",
+  be = "Belgium",
+  fr = "France",
+  de = "Germany",
+  es = "Spain",
+  ie = "Ireland"
+)
 
 lis_datasets <- lissyuse(data = countries, vars  = variables, from = 2012, to = 2023)
 
@@ -20,7 +28,10 @@ lis_all <- lis_datasets |>
             weight  = as.numeric(pwgt),
             married = as.integer(marital) %in% c(100, 110),
             agew    = age >= 20 & age <= 55,
-            treat   = as.integer(iso2 == "lu" & year >= 2018))
+            treat   = as.integer(iso2 == "lu" & year >= 2018)) |>
+  mutate(country = factor(country,
+                          levels = names(country_names),
+                          labels = unname(country_names)))
 
 # Plot 1
 
@@ -37,11 +48,12 @@ p1 <- ggplot(p1_data, aes(x = year, y = mean_hours, color = country)) +
   geom_point(size = 1) +
   geom_vline(xintercept = 2018, linetype = "dashed", linewidth = 0.3) +
   scale_x_continuous(breaks = 2012:2023, limits = c(2012, 2023)) +
-  labs(title = "Hours Worked (Main Job) of partnered women aged 20–55",
+  labs(
+      # title = "Hours Worked (Main Job) of partnered women aged 20–55",
        x = "Year", y = "Mean weekly hours (weighted)", color = "Country") +
   theme_minimal()
 
 print(png(file = paste0(USR_PDF, "/p1.png"),
-          width = 1500, height = 900, res = 150))
+          width = 2000, height = 1500, res = 300))
 print(p1)
 dev.off()

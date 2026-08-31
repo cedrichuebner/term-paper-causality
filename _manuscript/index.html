@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Cédric Hübner">
+<meta name="author" content="Nadine Theisen">
+<meta name="author" content="Kwangho Yo">
+<meta name="dcterms.date" content="2026-08-31">
+
+<title>Does optional individual taxation increase female labor supply?</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-8ffd5f67044e5306d9846f29df41dda5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="template/styles.css">
+<meta name="citation_title" content="Does optional individual taxation increase female labor supply?">
+<meta name="citation_abstract" content="Increasing women’s participation in the labor market is an important policy goal. However, in countries where married couples are taxed based on their shared income instead of individually, the nature of that system can disincentivize women from working more. Previous reforms toward individual taxation have proven effective in increasing the working hours of women. This paper investigates whether a 2018 reform in Luxembourg, which gave married couples the option to choose between joint and individual taxation, had the same effect. Based on models of utility maximization and intra-household bargaining, we assume that such a reform leads to an increase in working hours even though the change is not mandatory. Our analysis uses a difference-in-differences approach on individual-level data from Luxembourg and five other countries between 2012 and 2022. The resulting models show no effect of the reform on the working hours of women when controlling for education and children. However, the results are inconclusive, primarily due to methodological limitations and potential external influences. ">
+<meta name="citation_author" content="Cédric Hübner">
+<meta name="citation_author" content="Nadine Theisen">
+<meta name="citation_author" content="Kwangho Yo">
+<meta name="citation_publication_date" content="2026-08-31">
+<meta name="citation_cover_date" content="2026-08-31">
+<meta name="citation_year" content="2026">
+<meta name="citation_online_date" content="2026-08-31">
+<meta name="citation_language" content="en">
+<meta name="citation_reference" content="citation_title=Gender-Based Taxation and the Division of Family Chores;,citation_abstract=Gender-based taxation (GBT) satisfies Ramsey’s rule because it taxes at a lower rate the more elastic labor supply of women. We study GBT in a model in which labor elasticities emerge endogenously from intrahousehold bargaining. We explore the cases of superior bargaining power for men y higher male wages, and higher female home productivity. In all cases, men commit to a career in the market, take less home duties than women, and have lower labor supply elasticity. When society resolves its distributional concerns efficiently with gender-specific lump sum transfers, GBT with higher marginal tax rates on (single and married) men is optimal.;,citation_author=Alberto Alesina;,citation_author=Andrea Ichino;,citation_author=Loukas Karabarbounis;,citation_publication_date=2011;,citation_cover_date=2011;,citation_year=2011;,citation_fulltext_html_url=https://www.jstor.org/stable/41238092;,citation_issue=2;,citation_issn=1945-7731;,citation_volume=3;,citation_journal_title=American Economic Journal: Economic Policy;,citation_journal_abbrev=Am. Econ. J. Econ. Policy;,citation_publisher=American Economic Association;">
+<meta name="citation_reference" content="citation_title=Family Taxation;,citation_abstract=This Element seeks to provide an in-depth survey of the papers written on the optimal taxation of the incomes of the members of family households, as opposed to households with just a single individual, over the period beginning with the early 1980s and ending in the late 2010s. This literature, solidly within the public finance tradition, is not large, and so the Element gives quite a full exposition and discussion of the main contributions. The papers are grouped according to the type of tax system they have dealt with: linear, piecewise linear and non-linear taxation.;,citation_author=Patricia Apps;,citation_author=Ray Rees;,citation_publication_date=2025-05-31;,citation_cover_date=2025-05-31;,citation_year=2025;,citation_fulltext_html_url=https://www.cambridge.org/core/product/identifier/9781108973007/type/element;,citation_doi=10.1017/9781108973007;,citation_isbn=978-1-108-97300-7 978-1-009-47932-5 978-1-108-97267-3;,citation_language=en-US;,citation_series_title=Elements in Public Economics;">
+<meta name="citation_reference" content="citation_title=Difference-in-Differences Designs: A Practitioner’s Guide;,citation_abstract=Difference-in-differences (DiD) is arguably the most popular quasi-experimental research design. Its canonical form, with two groups and two periods, is well understood. However, empirical practices can be ad hoc when researchers go beyond that simple case. This article provides an organizing framework for discussing different types of DiD designs and their associated DiD estimators. It discusses covariates, weights, handling multiple periods, and staggered treatments. The organizational framework, however, applies to other extensions of DiD methods as well. (JEL C23, H75, I12, I38);,citation_author=Andrew Baker;,citation_author=Brantly Callaway;,citation_author=Scott Cunningham;,citation_author=Andrew Goodman-Bacon;,citation_author=Pedro H. C. Sant’Anna;,citation_publication_date=2026-06-01;,citation_cover_date=2026-06-01;,citation_year=2026;,citation_fulltext_html_url=https://pubs.aeaweb.org/doi/10.1257/jel.20251650;,citation_issue=2;,citation_doi=10.1257/jel.20251650;,citation_issn=0022-0515, 2328-8175;,citation_volume=64;,citation_language=en-US;,citation_journal_title=Journal of Economic Literature;,citation_journal_abbrev=J. Econ. Lit.;">
+<meta name="citation_reference" content="citation_title=A Theory of Marriage: Part II;,citation_author=Gary S. Becker;,citation_publication_date=1974-03;,citation_cover_date=1974-03;,citation_year=1974;,citation_fulltext_html_url=https://www.journals.uchicago.edu/doi/10.1086/260287;,citation_doi=10.1086/260287;,citation_issn=0022-3808, 1537-534X;,citation_volume=82;,citation_language=en-US;,citation_journal_title=Journal of Political Economy;,citation_journal_abbrev=J. Polit. Econ.;">
+<meta name="citation_reference" content="citation_title=Ehegattenbesteuerung in Deutschland;,citation_abstract=Ehegattensplitting und der Splittingvorteil: In Deutschland wählen Ehepaare bei der Besteuerung zwischen Einzelveranlagung und gemeinsamer Veranlagung. Wenn sie einzeln veranlagen, werden sie wie Alleinstehende besteuert (Individualbesteuerung). Bei gemeinsamer Veranlagung profitieren die Ehepartner vom Ehegattensplitting. Hohe Steuerlast für Zweitverdiener:innen in Deutschland: Das Ehegattensplitting ist jedoch politisch umstritten. Es trage der Eigenschaft der Ehe als Verbrauchs- und Versorgungsgemeinschaft Rechnung, argumentieren die Befürworter:innen. Die Kritiker:innen hingegen weisen darauf hin, dass das Ehegattensplitting auf ein Modell der Ehe zugeschnitten sei, innerhalb dessen nur ein Part ein Einkommen erzielt, und fördere dieses Modell in besonderem Maß. Steuereffekte beeinflussen insbesondere das Arbeitsangebot von Frauen: Studien ergaben, dass das Arbeitsangebot von Männern relativ starr ist, während Frauen mit ihrem Arbeitsangebot auf Änderungen des Nettolohns deutlich reagieren. Die geschlechtsspezifischen Unterschiede zwischen den Nettolohnelastizitäten lassen vermuten, dass ein Wechsel vom Ehegattensplitting zur Individualbesteuerung positive Wirkungen auf das Arbeitsangebot insgesamt hätte. Unterschiedliche Reformoptionen liegen vor: Die im internationalen Vergleich niedrige Erwerbsbeteiligung der Frau in Deutschland, insbesondere bei verheirateten Frauen mit Kindern, gilt als Hinweis darauf, dass diese im Vergleich zu Männern weiterhin erschwerte Teilhabemöglichkeiten an Wirtschaft und Gesellschaft haben. Neben fehlenden Kinderbetreuungsmöglichkeiten stehen das Steuer- und Sozialsystem im Fokus möglicher Reformen.;,citation_author=Johannes Becker;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_fulltext_html_url=https://www.bertelsmann-stiftung.de/doi/10.11586/2021078;,citation_doi=10.11586/2021078;,citation_language=de-DE;,citation_publisher=Bertelsmann Stiftung;">
+<meta name="citation_reference" content="citation_title=DIW Berlin: Besteuerung von Paaren : das Ehegattensplitting und seine Alternativen;,citation_abstract=Über die Differenzierung von Sozialversicherungsbeiträgen in Arbeitgeber- und Arbeitnehmerbeiträge gibt es in Deutschland immer wieder Diskussionen, welche in den letzten Jahren sogar zu einer Aufweichung des Prinzips einer paritätischen Aufteilung geführt haben. Den meisten ökonomischen Theorien zufolge sollte diese formelle Aufteilung der Beitragslast allerdings keine Rolle spielen. Empirische Studien ...;,citation_author=D. I. W. Berlin;,citation_fulltext_html_url=https://www.diw.de/de/diw_01.c.465344.de/publikationen/roundup/2014_0021/besteuerung_von_paaren__das_ehegattensplitting_und_seine_alternativen.html;,citation_language=de-DE;,citation_publisher=DIW Berlin;">
+<meta name="citation_reference" content="citation_title=Quantifying the Disincentive Effects of Joint Taxation on Married Women’s Labor Supply;,citation_abstract=We quantify the disincentive effects of elements of joint taxation in the labor income tax codes of 17 European countries and the US. We analyze the extent to which hours worked of married men and women would change if each country switched to a system of separate taxation of married couples. In this hypothetical tax reform, we keep the average tax burden of married households constant. With the exception of four countries featuring already a system of separate taxation, the model predicts that married women’s hours worked increase on average by 115 hours, or 10.5 percent, through this reform.;,citation_author=Alexander Bick;,citation_author=Nicola Fuchs-Schündeln;,citation_publication_date=2017-05-01;,citation_cover_date=2017-05-01;,citation_year=2017;,citation_fulltext_html_url=https://pubs.aeaweb.org/doi/10.1257/aer.p20171063;,citation_issue=5;,citation_doi=10.1257/aer.p20171063;,citation_issn=0002-8282;,citation_volume=107;,citation_language=en-US;,citation_journal_title=American Economic Review;,citation_journal_abbrev=Am. Econ. Rev.;">
+<meta name="citation_reference" content="citation_title=The Political Economy of Joint Taxation;,citation_abstract=Joint taxation of married couples represents a puzzle for welfare economics. We investigate whether political economy forces can explain its persistence. We develop sufficient statistics to determine whether a reform towards individual taxation would garner majority support and apply this framework to the U.S. tax system since the 1960s. Our findings indicate that support for individual taxation has increased over time. As of today, 50% of all married individuals would benefit from such a reform. Among those worse off are poor single-earner couples. A reform that reduces marriage bonuses also for them is rejected by a social welfare function that concentrates weights at the bottom of the distribution.;,citation_author=Felix Bierbrauer;,citation_author=Pierre C. Boyer;,citation_author=Andreas Peichl;,citation_author=Daniel Weishaar;,citation_publication_date=2025;,citation_cover_date=2025;,citation_year=2025;,citation_fulltext_html_url=https://www.ssrn.com/abstract=5187058;,citation_doi=10.2139/ssrn.5187058;,citation_language=en-US;">
+<meta name="citation_reference" content="citation_title=A concise guide to Difference-in-Differences methods for economists with applications to taxation, regulation, and environment;,citation_abstract=Difference-in-Differences (DiD) is a useful statistical technique employed to estimate the effects that exogenous events can have on the outcome of some response variables. The latter are obtained from a random sample of treated units (i.e. units exposed to the event) ideally drawn from an infinite population. The comparable random sample/s of untreated units serve as control comparison group/s. The event is termed “treatment”, but it could be equally termed “causal factor” to emphasise that with DiD we are not estimating a mere statistical association among phenomena. With DiD we try to evaluate whether a precise causal link between causes and effects –defined according to a model based on a proper identification of the relationship among variables– is actually consistent with the data, and to estimate how intensive and statistically robust the causal-effect link actually is.;,citation_author=Bruno Bosco;,citation_author=Paolo Maranzano;,citation_publication_date=2025;,citation_cover_date=2025;,citation_year=2025;,citation_fulltext_html_url=https://www.ssrn.com/abstract=5187998;,citation_doi=10.2139/ssrn.5187998;,citation_issn=1556-5068;,citation_language=en-US;,citation_journal_title=SSRN Electronic Journal;,citation_journal_abbrev=SSRN Electron. J.;">
+<meta name="citation_reference" content="citation_title=Determinants of female labor force participation;,citation_author=Matias Busso;,citation_author=Darío Romero Fonseca;,citation_editor=Leonardo Gasparini;,citation_editor=Mariana Marchionni;,citation_publication_date=2015;,citation_cover_date=2015;,citation_year=2015;,citation_fulltext_html_url=https://sedici.unlp.edu.ar/bitstream/handle/10915/65404/Documento_completo.pdf-PDFA.pdf;,citation_isbn=978-950-34-1287-9;,citation_inbook_title=Briding gender gaps? The rise and deceleration of female labor force participation in Latin America;">
+<meta name="citation_reference" content="citation_title=Difference-in-Differences with multiple time periods;,citation_abstract=In this article, we consider identification, estimation, and inference procedures for treatment effect parameters using Difference-in-Differences (DiD) with (i) multiple time periods, (ii) variation in treatment timing, and (iii) when the ‘‘parallel trends assumption&amp;amp;amp;quot; holds potentially only after conditioning on observed covariates. We show that a family of causal effect parameters are identified in staggered DiD setups, even if differences in observed characteristics create non-parallel outcome dynamics between groups. Our identification results allow one to use outcome regression, inverse probability weighting, or doubly-robust estimands. We also propose different aggregation schemes that can be used to highlight treatment effect heterogeneity across different dimensions as well as to summarize the overall effect of participating in the treatment. We establish the asymptotic properties of the proposed estimators and prove the validity of a computationally convenient bootstrap procedure to conduct asymptotically valid simultaneous (instead of pointwise) inference. Finally, we illustrate the relevance of our proposed tools by analyzing the effect of the minimum wage on teen employment from 2001–2007. Open-source software is available for implementing the proposed methods. © 2020 Elsevier B.V. All rights reserved.;,citation_author=Brantly Callaway;,citation_author=Pedro H. C. Sant’Anna;,citation_publication_date=2021-12;,citation_cover_date=2021-12;,citation_year=2021;,citation_fulltext_html_url=https://linkinghub.elsevier.com/retrieve/pii/S0304407620303948;,citation_issue=2;,citation_doi=10.1016/j.jeconom.2020.12.001;,citation_issn=03044076;,citation_volume=225;,citation_language=en-US;,citation_journal_title=Journal of Econometrics;,citation_journal_abbrev=J. Econom.;">
+<meta name="citation_reference" content="citation_title=Difference-in-Differences for Policy Evaluation;,citation_author=Brantly Callaway;,citation_editor=Klaus F. Zimmermann;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_fulltext_html_url=https://link.springer.com/10.1007/978-3-319-57365-6_352-1;,citation_doi=10.1007/978-3-319-57365-6_352-1;,citation_isbn=978-3-319-57365-6;,citation_language=en-US;,citation_inbook_title=Handbook of Labor, Human Resources and Population Economics;">
+<meta name="citation_reference" content="citation_title=The temporary impact of permanent employment incentives: Evidence from Italy;,citation_abstract=This paper evaluates the short and medium-term effectiveness of hiring incentives aimed at promoting the permanent conversion of temporary contracts through social contribution exemptions. Using rich administrative data from Tuscany, providing detailed employment histories, we use difference in differences and regression discontinuity designs to exploit a unique change in eligibility criteria in 2018. We find that the incentives immediately increased the probability of conversion, with no evidence of substitution against non-eligible cohorts. However, these positive effects were short-lived and appear to reflect anticipated conversions, as we find null longer-term effects on permanent hirings.;,citation_author=Michele Cantarella;,citation_author=Maria Cristina Maurizio;,citation_author=Francesco Serti;,citation_publication_date=2025-11-17;,citation_cover_date=2025-11-17;,citation_year=2025;,citation_fulltext_html_url=http://arxiv.org/abs/2509.10193;,citation_doi=10.48550/arXiv.2509.10193;,citation_language=en-US;">
+<meta name="citation_reference" content="citation_title=Does it pay to say “I do”? Marriage bonuses and penalties across the EU;,citation_abstract=We analyse the different fiscal treatment of married and cohabiting couples across all EU Member States using microsimulation methods. Our article highlights important differences across EU countries’ tax–benefit systems, where seven countries show substantial bonuses for married couples and four exhibit marriage penalties. On a micro level, we find that these marriage bonuses/penalties differ substantially across household types and income. From a policy point of view, our results suggest that the abolishment of marriage-related tax–benefit components in countries with marriage bonuses would leave some households financially worse off but would increase governments revenues that could be spent to targeted support of specific groups. From both an equity and efficiency point of view, this abolishment would be desirable.;,citation_author=Michael Christl;,citation_author=Silvia De Poli;,citation_author=Viginta Ivaškaitė-Tamošiūnė;,citation_publication_date=2023-07;,citation_cover_date=2023-07;,citation_year=2023;,citation_fulltext_html_url=https://journals.sagepub.com/doi/10.1177/09589287231159492;,citation_issue=3;,citation_doi=10.1177/09589287231159492;,citation_issn=0958-9287, 1461-7269;,citation_volume=33;,citation_language=en-US;,citation_journal_title=Journal of European Social Policy;,citation_journal_abbrev=J. Eur. Soc. Policy;">
+<meta name="citation_reference" content="citation_title=Joint Taxation and the Labour Supply of Married Women: Evidence from the Canadian Tax Reform of 1988*;,citation_abstract=The Canadian federal tax reform of 1988 replaced a spousal tax exemption with a non-refundable tax credit. This reduced the “jointness” of the tax system: after the reform, secondary earners’ effective “first dollar” marginal tax rates no longer depended on the marginal tax rates of their spouses. In practice, the effective “first dollar” marginal tax rates faced by women with high-income husbands were particularly reduced. Using difference-indifference estimators, we find a significant increase in labour force participation among women married to higher-income husbands.;,citation_author=Thomas F. Crossley;,citation_author=Sung‐Hee Jeon;,citation_publication_date=2007-09;,citation_cover_date=2007-09;,citation_year=2007;,citation_fulltext_html_url=https://onlinelibrary.wiley.com/doi/10.1111/j.1475-5890.2007.00059.x;,citation_issue=3;,citation_doi=10.1111/j.1475-5890.2007.00059.x;,citation_issn=0143-5671, 1475-5890;,citation_volume=28;,citation_language=en-US;,citation_journal_title=Fiscal Studies;,citation_journal_abbrev=Fisc. Stud.;">
+<meta name="citation_reference" content="citation_title=Difference-in-Differences;,citation_author=Scott Cunningham;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_doi=10.2307/j.ctv1c29t27.12;,citation_inbook_title=Causal Inference: The Mixtape;">
+<meta name="citation_reference" content="citation_title=Taxation, Work and Gender Equality in Ireland;,citation_author=Karina Doorley;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_fulltext_html_url=https://www.ssrn.com/abstract=3177369;,citation_doi=10.2139/ssrn.3177369;,citation_issn=1556-5068;,citation_language=en-US;,citation_journal_title=SSRN Electronic Journal;,citation_journal_abbrev=SSRN Electron. J.;">
+<meta name="citation_reference" content="citation_title=Why Have Women Become Left-Wing? The Political Gender Gap and the Decline in Marriage;,citation_author=L. Edlund;,citation_author=R. Pande;,citation_publication_date=2002-08-01;,citation_cover_date=2002-08-01;,citation_year=2002;,citation_fulltext_html_url=https://academic.oup.com/qje/article-lookup/doi/10.1162/003355302760193922;,citation_issue=3;,citation_doi=10.1162/003355302760193922;,citation_issn=0033-5533, 1531-4650;,citation_volume=117;,citation_language=en-US;,citation_journal_title=The Quarterly Journal of Economics;,citation_journal_abbrev=Q. J. Econ.;">
+<meta name="citation_reference" content="citation_title=Tax Reforms and Labor Supply;,citation_author=Nada Eissa;,citation_publication_date=1996-01;,citation_cover_date=1996-01;,citation_year=1996;,citation_fulltext_html_url=https://www.journals.uchicago.edu/doi/10.1086/tpe.10.20061839;,citation_doi=10.1086/tpe.10.20061839;,citation_issn=0892-8649, 1537-2650;,citation_volume=10;,citation_language=en-US;,citation_journal_title=Tax Policy and the Economy;,citation_journal_abbrev=Tax Policy Econ.;">
+<meta name="citation_reference" content="citation_title=EUROMOD country report: Luxembourg 2022-2025;,citation_author=A. El Mashlohi;,citation_author=A. Garrido Perez;,citation_author=A.-S. Genevois;,citation_author=N. Islam;,citation_author=A. Montes-Viñas;,citation_editor=L. Manso;,citation_publication_date=2026;,citation_cover_date=2026;,citation_year=2026;,citation_fulltext_html_url=https://data.europa.eu/doi/10.2760/8112311;,citation_technical_report_institution=Publications Office of the European Union;">
+<meta name="citation_reference" content="citation_title=The politics of married couples’ taxation: Understanding the shift to the individual tax unit;,citation_abstract=Tax policies mirror and shape societal structures. The joint tax unit, for instance, raises marginal tax rates for secondary earners, mostly women, creating a strong disincentive to work. A shift to the individual tax unit, which allows spouses’ incomes to be taxed separately, significantly impacts women’s work decisions and gender equality. Since the 1960s, numerous countries have shifted to the individual tax unit, yet major economies like the USA and Germany remain reluctant. In this paper, I used a fuzzy-set QCA to examine the puzzling adoption patterns of the individual tax unit among 19 Western democracies. The findings show that the institutional stickiness of the splitting method – whose reform is associated with higher political costs – is especially relevant for tax unit reform. Countries that used aggregation instead of the splitting method were more inclined to shift to the individual tax unit. High shares of women’s political representation, female labor demand, strong feminist movements and strong left parties can, however, serve as additional drivers. These findings contribute to the literature on tax and welfare state reforms, which has so far neglected the politics of married couples’ taxation.;,citation_author=Teresa Fehrenbach;,citation_publication_date=2026-02-03;,citation_cover_date=2026-02-03;,citation_year=2026;,citation_fulltext_html_url=https://www.tandfonline.com/doi/full/10.1080/13501763.2026.2621236;,citation_doi=10.1080/13501763.2026.2621236;,citation_issn=1350-1763, 1466-4429;,citation_language=en-US;,citation_journal_title=Journal of European Public Policy;,citation_journal_abbrev=J. Eur. Public Policy;">
+<meta name="citation_reference" content="citation_title=Closing the gender gap in education: What is the state of gaps in labour force participation for women, wives and mothers?;,citation_abstract=The educational gender gap has closed or reversed in many countries. But what of gendered labour market inequalities? Using micro-level census data for some 40 countries, the authors examine the labour force participation gap between men and women, the “marriage gap” between married and single women’s participation, and the “motherhood gap” between mothers’ and nonmothers’ participation. They find significant heterogeneity among countries in terms of the size of these gaps, the speed at which they are changing, and the relationships between them and the educational gap. But counterfactual regression analysis shows that the labour force participation gap remains largely unexplained by the other gaps.;,citation_author=Ina Ganguli;,citation_author=Ricardo Hausmann;,citation_author=Martina Viarengo;,citation_publication_date=2014-06;,citation_cover_date=2014-06;,citation_year=2014;,citation_fulltext_html_url=https://onlinelibrary.wiley.com/doi/10.1111/j.1564-913X.2014.00007.x;,citation_issue=2;,citation_doi=10.1111/j.1564-913X.2014.00007.x;,citation_issn=0020-7780, 1564-913X;,citation_volume=153;,citation_language=en-US;,citation_journal_title=International Labour Review;,citation_journal_abbrev=Int. Labour Rev.;">
+<meta name="citation_reference" content="citation_title=Briding gender gaps? The rise and deceleration of female labor force participation in Latin America;,citation_editor=Leonardo Gasparini;,citation_editor=Mariana Marchionni;,citation_publication_date=2015;,citation_cover_date=2015;,citation_year=2015;,citation_fulltext_html_url=https://sedici.unlp.edu.ar/bitstream/handle/10915/65404/Documento_completo.pdf-PDFA.pdf;,citation_isbn=978-950-34-1287-9;">
+<meta name="citation_reference" content="citation_title=Impact Evaluation in Practice;,citation_author=Paul J. Gertler;,citation_author=Sebastian Martinez;,citation_author=Patrick Premand;,citation_author=Laura B. Rawlings;,citation_author=Christel M. J. Vermeersch;,citation_publication_date=2010-12-13;,citation_cover_date=2010-12-13;,citation_year=2010;,citation_fulltext_html_url=http://elibrary.worldbank.org/doi/book/10.1596/978-0-8213-8541-8;,citation_doi=10.1596/978-0-8213-8541-8;,citation_isbn=978-0-8213-8541-8 978-0-8213-8593-7;,citation_language=en-US;">
+<meta name="citation_reference" content="citation_title=Taxes and labor supply;,citation_abstract=Over 75% of Federal tax revenue is raised through the income tax and FICA taxes. The potential effects on labor supply and economic welfare are important because of the large and increasing reliance on direct taxation. Over the past few years significant legislative changes have occurred with respect to taxation of labor: the 25% tax cuts,indexation,the tax credit for working spouses, and likely increases in FICA taxation.I reviewr ecent econometric work which measures the effect of taxes on labor supply and which analyzes the likely effects of tax law changes on labor supply and economic welfare.Sections 1 and 2 develop the theory and econometric techniques for models of labor supply with taxes. Section 3 discusses the various tax systemsin the U.S. In Section 4, I present empirical estimates for husbands’and wives’ labor supply functions. The economic cost of the tax system is also estimated. In Section 5 the individual questionnaire data for high income individuals is reviewed. Lastly, in Section 6 evidence from the negative income tax experiments and for social security beneficiaries is considered. These latter groups face extremely high marginal tax rates so that evidence beyond that contained in other surveys of labor supplyis provided.$&amp;amp;amp;lt;$br$&amp;gt;&amp;lt;$small$&amp;gt;$(This abstract was borrowed from another version of this item.)$<$/small$>$;,citation_author=Jerry A. Hausman;,citation_publication_date=1985;,citation_cover_date=1985;,citation_year=1985;,citation_fulltext_html_url=https://ideas.repec.org//h/eee/pubchp/1-04.html;,citation_volume=1;,citation_language=en-US;,citation_journal_title=Handbook of Public Economics;,citation_journal_abbrev=Handb. Public Econ.;,citation_publisher=Elsevier;">
+<meta name="citation_reference" content="citation_title=Understanding the rising trend in female labour force participation;,citation_abstract=Female labour force participation has increased tremendously since World War II in developed countries. Prior research provides piecemeal evidence identifying some drivers of change but largely fails to present a consistent story. Using a rare combination of data and modelling capacity available in Australia, we develop a new decomposition approach to explain rising female labour force participation since the mid-1990s. The approach allows us to identify the role of tax and transfer policy reforms as well as three other factors that have been shown to matter by earlier studies: (i) changes in real wages; (ii) population composition changes; and (iii) changes in labour supply preference parameters. For the first time, all these factors are identified through a single consistent decomposition framework. A key result is that – despite the ongoing emphasis of public policy on improved work incentives for women in Australia and elsewhere – changes in financial incentives due to tax and transfer policy reforms have contributed relatively little to achieve these large increases in participation. Instead, the other three factors drive the increased female labour force participation.;,citation_author=Nicolas Hérault;,citation_author=Guyonne Kalb;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_fulltext_html_url=https://onlinelibrary.wiley.com/doi/abs/10.1111/1475-5890.12313;,citation_issue=4;,citation_doi=10.1111/1475-5890.12313;,citation_issn=1475-5890;,citation_volume=43;,citation_language=en-US;,citation_journal_title=Fiscal Studies;,citation_journal_abbrev=Fisc. Stud.;">
+<meta name="citation_reference" content="citation_title=Joint Taxation and Intra-Household Inequality: Evidence from Same-Sex Couples;,citation_abstract=Joint taxation of couples is often criticized for distorting labor supply and reinforcing household income inequality, particularly by disincentivizing secondary earners. Yet, empirical evidence is limited, as switching to joint taxation is typically endogenous and observed responses among different-sex couples are shaped by gender norms. We study the 2013 extension of joint income taxation to same-sex civil partners in Germany to isolate how tax incentives influence household income allocation. Using administrative tax return data on the universe of filers, we provide the first large-scale evidence on same-sex couples in Germany. We find that joint taxation increases within-couple inequality, primarily through reduced earnings of secondary earners. The partner pay gap rises by 4.1 percentage points - a 12.8% increase relative to the prereform level. Estimated tax elasticities are statistically significant but smaller than those for women in different-sex couples. However, they become insignificant when estimated within relative earner groups, suggesting that responses reflect increased inequality within couples rather than individual responses to marginal tax changes. Additionally, we show that same-sex couples are less likely than different-sex couples to choose withholding schemes that reinforce income differences between partners. Our findings suggest that joint taxation increases intrahousehold inequality, especially when incentives align with gender norms and there is scope for specialization.;,citation_author=Elena Herold;,citation_author=Leonie Koch;,citation_author=Carina Neisser;,citation_publication_date=2025;,citation_cover_date=2025;,citation_year=2025;,citation_language=en-US;">
+<meta name="citation_reference" content="citation_title=Erwerbsbeteiligung von Frauen ab 45: Empirische Evidenz zum Einfluss finanzieller Anreize;,citation_abstract=Unsere neue Studie zeigt: Grund sind auch finanzielle Fehlanreize durch das Ehegattensplitting. Bliebe vom Zusatzverdienst mehr Netto übrig, würden mehr Frauen erwerbstätig werden oder ihre Erwerbsarbeitszeit ausweiten. Die wichtigsten Erkenntnisse im Überblick: • Mehr Erwerbsarbeit lohnt sich oft nicht: Rund 50 Prozent der teilzeitbeschäftigten verheirateten Frauen zwischen 45 und 66 Jahren geben an, dass es sich für sie finanziell nicht lohnt, die Arbeitszeit zu erhöhen. Unter den Nichterwerbstätigen in dieser Gruppe sind es immerhin knapp 35 Prozent, für die eine Erwerbstätigkeit aus finanziellen Gründen unattraktiv ist. • Großes Potenzial für mehr Beschäftigung: Eine getrennte Veranlagung von Ehepartnern könnte die Erwerbsquote um knapp 1,5 Prozentpunkte erhöhen und das Arbeitsvolumen um ca. 3 Prozent steigern – unterm Strich entspräche das bis zu 175.000 zusätzlichen Vollzeitstellen. • Was zusätzlich hilft: Geteilte Sorgearbeit und gute Arbeitsbedingungen verstärken den Effekt – unter solchen Voraussetzungen steigt der Anteil der Frauen, die sich Vollzeit (39 Stunden) vorstellen können, deutlich.;,citation_author=Fiona Herrmann;,citation_author=Lavinia Kinne;,citation_author=Katharina Wrohlich;,citation_publication_date=2026;,citation_cover_date=2026;,citation_year=2026;,citation_fulltext_html_url=https://www.bertelsmann-stiftung.de/doi/10.11586/2026036;,citation_doi=10.11586/2026036;,citation_language=de-DE;,citation_publisher=Bertelsmann Stiftung;">
+<meta name="citation_reference" content="citation_title=Making the Switch From Joint to Individual Taxation in Luxembourg. Cost, Behavioural Response and Welfare Effects;,citation_abstract=We study the effect of a move from joint to individual taxation system using 2,276 couple household living in Luxembourg. We estimate simultaneously labour supply and social assistance (RMG) participation, exploiting a discrete choice model. We focus on the distributional, work (extensive and intensive margin) incentive, and the social welfare effect of introducing a mandatory individual taxation system in Luxembourg. The work incentive of married women increases by 2.27% in intensive margin and 2.58% in extensive margin after the reform. The incentive of married men is almost zero. Equivalised disposable income, after the behavioural adjustment, decreases on average 2.1 per cent. After adjustments to direct and indirect taxes, the net revenue-neutral result is a budget surplus for the central government of around €10 million.;,citation_author=Nizamul Islam;,citation_author=Karina Doorley;,citation_author=Lennart Flood;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_fulltext_html_url=https://www.ssrn.com/abstract=3593263;,citation_doi=10.2139/ssrn.3593263;,citation_issn=1556-5068;,citation_language=en-US;,citation_journal_title=SSRN Electronic Journal;,citation_journal_abbrev=SSRN Electron. J.;">
+<meta name="citation_reference" content="citation_title=The Political Economy of Gender: Explaining Cross‐National Variation in the Gender Division of Labor and the Gender Voting Gap;,citation_abstract=Mainstream political economy has tended to treat the family as a unit when examining the distributional consequences of labor market institutions and of public policy. In a world with high divorce rates, we argue that this simplification is more likely to obscure than to instruct. We find that labor market opportunities for women, which vary systematically with the position of countries in the international division of labor and with the structure of the welfare state, affect women’s bargaining power within the family and as a result, can explain much of the cross country variation in the gender division of labor as well as the gender gap in political preferences.;,citation_author=Torben Iversen;,citation_author=Frances Rosenbluth;,citation_publication_date=2006-01;,citation_cover_date=2006-01;,citation_year=2006;,citation_fulltext_html_url=https://onlinelibrary.wiley.com/doi/10.1111/j.1540-5907.2006.00166.x;,citation_issue=1;,citation_doi=10.1111/j.1540-5907.2006.00166.x;,citation_issn=0092-5853, 1540-5907;,citation_volume=50;,citation_language=en-US;,citation_journal_title=American Journal of Political Science;,citation_journal_abbrev=Am. J. Polit. Sci.;">
+<meta name="citation_reference" content="citation_title=The Political Economy of Gender: Explaining Cross-National Variation in Household Bargaining, Divorce, and the Gender Voting Gap;,citation_abstract=Mainstream political economy has tended to treat the family as a unit when examining the distributional consequences of labor market institutions and of public policy. In a world with high divorce rates, we argue that this simplification is more likely to obscure than to instruct. We find that labor market opportunities for women affect women’s bargaining power within the family and as a result, can explain much of the cross country variation in the household division of labor, patterns of divorce, and political preferences.;,citation_author=Torben Iversen;,citation_author=Frances McCall Rosenbluth;,citation_publication_date=2006;,citation_cover_date=2006;,citation_year=2006;,citation_fulltext_html_url=https://www.ssrn.com/abstract=1154135;,citation_doi=10.2139/ssrn.1154135;,citation_language=en-US;,citation_publisher=SSRN;">
+<meta name="citation_reference" content="citation_title=Women, Work, and Politics: The Political Economy of Gender Inequality;,citation_abstract=Looking at women’s power in the home, in the workplace, and in politics from a political economy perspective, Torben Iversen and Frances Rosenbluth demonstrate that equality is tied to demand for women’s labor outside the home, which is a function of structural, political, and institutional conditions. They go on to explain several anomalies of modern gender politics: why women vote differently from men; why women are better represented in the workforce in the United States than in other countries but less well represented in politics; why men share more of the household work in some countries than in others; and why some countries have such low fertility rates. The first book to integrate the micro-level of families with the macro-level of national institutions, &amp;amp;amp;lt;i&amp;gt;Women, Work, and Politics&amp;lt;/i&amp;gt; presents an original and groundbreaking approach to gender inequality.;,citation_author=Torben Iversen;,citation_author=Frances Rosenbluth;,citation_publication_date=2010;,citation_cover_date=2010;,citation_year=2010;,citation_fulltext_html_url=https://www.jstor.org/stable/j.ctt1nq33z;,citation_isbn=978-0-300-15310-1;">
+<meta name="citation_reference" content="citation_title=Labor supply consequences of family taxation: Evidence from the Czech Republic;,citation_author=Klára Kalíšková;,citation_publication_date=2014-10;,citation_cover_date=2014-10;,citation_year=2014;,citation_fulltext_html_url=https://linkinghub.elsevier.com/retrieve/pii/S0927537114000517;,citation_doi=10.1016/j.labeco.2014.04.010;,citation_issn=09275371;,citation_volume=30;,citation_language=en-US;,citation_journal_title=Labour Economics;,citation_journal_abbrev=Labour Econ.;">
+<meta name="citation_reference" content="citation_title=Recent research on labor supply: Implications for tax and transfer policy;,citation_abstract=Most work in optimal tax theory relies on simple labor supply models that fail to incorporate insights from the modern labor supply literature. As a result, it may have reached misleading conclusions regarding the optimal tax structure. The recent work on labor supply that I review here emphasizes human capital investment and the participation margin. When the data is viewed through the lens of models that account for these features, it implies labor supply is more elastic than conventional wisdom suggests. Recent work also stresses how elasticities vary by age, education, gender and marital status. Here I explore the implications of these recent developments in the labor supply literature for the optimal design of the tax system. I also review some recent work in the optimal tax literature that does utilize more sophisticated labor supply models, and discuss how incorporating those features influences optimal tax calculations.;,citation_author=Michael P. Keane;,citation_publication_date=2022-08;,citation_cover_date=2022-08;,citation_year=2022;,citation_fulltext_html_url=https://linkinghub.elsevier.com/retrieve/pii/S0927537121000610;,citation_doi=10.1016/j.labeco.2021.102026;,citation_issn=09275371;,citation_volume=77;,citation_language=en-US;,citation_journal_title=Labour Economics;,citation_journal_abbrev=Labour Econ.;">
+<meta name="citation_reference" content="citation_title=The effects of joint taxation of married couples on labor supply and non-wage income;,citation_abstract=The United States changed its tax treatment of married couples in 1948, from a system in which each spouse paid taxes on his or her own income to a system in which a married couple is taxed as a unit. The switch from separate to joint taxation changed incentives for labor supply and asset ownership. This paper investigates the effects of the conversion to joint taxation, taking advantage of a natural experiment created by cross-state variation in property laws. Married individuals in states with community property laws had always been taxed as if each spouse had earned half of the couple’s income, and thus were unaffected by the 1948 legal change. Comparing the behavior of highly-educated taxpayers in affected and unaffected states indicates that the tax change is associated with a decline of approximately 2 percentage points in the employment rate of married women, consistent with the higher first-dollar tax rates they faced after 1948. Women married to self-employed men were also less likely to have non-wage income after 1948, reflecting pre-1948 allocation of family assets to wives for tax purposes. The effects of joint taxation on married men’s labor force participation and non-wage income holding are generally not statistically significant.;,citation_author=Sara LaLumia;,citation_publication_date=2008-07;,citation_cover_date=2008-07;,citation_year=2008;,citation_fulltext_html_url=https://linkinghub.elsevier.com/retrieve/pii/S0047272708000303;,citation_issue=7;,citation_doi=10.1016/j.jpubeco.2008.01.009;,citation_issn=00472727;,citation_volume=92;,citation_language=en-US;,citation_journal_title=Journal of Public Economics;,citation_journal_abbrev=J. Public Econ.;">
+<meta name="citation_reference" content="citation_title=The changing labor force and gender pay gap in Luxembourg;,citation_author=Kristell Leduc;,citation_author=Eva Sierminska;,citation_publication_date=2025-01-27;,citation_cover_date=2025-01-27;,citation_year=2025;,citation_fulltext_html_url=https://liser.elsevierpure.com/ws/portalfiles/portal/73850961/policy-brief_01_v2.pdf;,citation_technical_report_institution=Luxembourg Institute of Socio-Economic Research;">
+<meta name="citation_reference" content="citation_title=Identification for difference in differences with cross-section and panel data;,citation_abstract=For difference-in-differences (DD), the identification question in using three types of progressively more informative data is addressed: independent cross-sections, dmoverT panels, and dno-moverT panels. Although DD identifies dthe average effect on the treatedT, its meaning and the identification conditions differ across the data types. D 2006 Elsevier B.V. All rights reserved.;,citation_author=Myoung-jae Lee;,citation_author=Changhui Kang;,citation_publication_date=2006-08;,citation_cover_date=2006-08;,citation_year=2006;,citation_fulltext_html_url=https://linkinghub.elsevier.com/retrieve/pii/S0165176506000802;,citation_issue=2;,citation_doi=10.1016/j.econlet.2006.03.007;,citation_issn=01651765;,citation_volume=92;,citation_language=en-US;,citation_journal_title=Economics Letters;,citation_journal_abbrev=Econ. Lett.;">
+<meta name="citation_reference" content="citation_title=Reducing the excess burden of subsidizing the stork: Joint taxation, individual taxation, and family tax splitting;,citation_abstract=Analyzing a homogenous household setting with endogenous fertility and endogenous labor supply, we demonstrate that moving from joint taxation to individual taxation and adapting child benefits so as to keep fertility constant entails a Pareto improvement. The change is associated with an increase in labor supply and consumption and a reduction of the marginal income tax, while the child benefit may move in either direction. Similarly, a move from joint taxation to some scheme of family tax splitting increases labor supply and welfare.;,citation_author=Volker Meier;,citation_author=Matthias Wrede;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_doi=10.1007/s00148-011-0400-x;,citation_volume=26;,citation_language=en-US;">
+<meta name="citation_reference" content="citation_title=&amp;amp;amp;quot;Mateneen. Fir all Famill. Fir all Kand.&amp;quot;: Le Premier ministre Luc Frieden et les ministres Gilles Roth, Claude Meisch et Max Hahn présentent un vaste paquet de mesures en faveur des familles et des enfants;,citation_author=Ministère des Finances;,citation_publication_date=2026-01-01;,citation_cover_date=2026-01-01;,citation_year=2026;,citation_fulltext_html_url=https://mfin.gouvernement.lu/fr/actualites.gouvernement2024%2Bfr%2Bactualites%2Btoutes_actualites%2Bcommuniques%2B2026%2B01-janvier%2B06-presentation-paquet-mesures.html;,citation_technical_report_institution=Le gouvernement luxembourgeois;">
+<meta name="citation_reference" content="citation_title=Taxing Working Families: A Distributional Analysis;,citation_author=OECD;,citation_publication_date=2005-11-16;,citation_cover_date=2005-11-16;,citation_year=2005;,citation_fulltext_html_url=https://www.oecd.org/en/publications/taxing-working-families_9789264013216-en.html;,citation_doi=10.1787/9789264013216-en;,citation_isbn=978-92-64-01320-9 978-92-64-01321-6;,citation_language=en-US;,citation_series_title=OECD Tax Policy Studies;">
+<meta name="citation_reference" content="citation_title=Economic Perspectives on the Income Taxation of Couples and the Choice of Tax Unit: A Review of the Literature;,citation_abstract=This paper examines the case for replacing joint income by individual income as the base for the taxation of two-earner families. It draws upon well-established economic theory to support the argument. This shows that individual taxation is superior to joint taxation (“income-splitting”) on grounds of both efficiency and equity. It also briefly reports on important recent empirical work that shows that in Germany moving from joint to individual taxation while at the same time increasing the availability of affordable pre-school child care would be self-financing and have a positive net social benefit.;,citation_author=Ray Rees;,citation_publication_date=2017;,citation_cover_date=2017;,citation_year=2017;,citation_fulltext_html_url=https://www.genderopen.de/handle/25595/1377;,citation_doi=10.25595/1371;,citation_language=en-US;">
+<meta name="citation_reference" content="citation_title=A Note on the Pure Theory of Consumer’s Behaviour;,citation_author=P A Samuelson;,citation_publication_date=1938;,citation_cover_date=1938;,citation_year=1938;,citation_fulltext_html_url=https://www.jstor.org/stable/2548836;,citation_issue=17;,citation_volume=5;,citation_language=en-US;">
+<meta name="citation_reference" content="citation_title=Invisible taxation: Women and the tax state;,citation_abstract=Tax systems in Europe and elsewhere severely discriminate against women. This has huge implications for their income, wealth and general power within society. It also leads to gendered consumption patterns, lower overall labour supply and economic growth. Yet, when it comes to research into the politics behind gendered taxation both feminist scholars and public policy experts are curiously quiet. This paper shows that this is not only a problem for important outcomes these fields care about such as gender equality or economic growth. This failure also leaves interesting and insightful political economy puzzles overlooked and hides a powerful analytical tool for all forms of gender discrimination. Looking at the gendered political economy of taxation allows researchers to see other conceptual and methodological issues in political economy research such as unit of analysis inconsistencies. Hence, bringing gender and taxation research together does not only open up a new research field with seriously underexplored issue of inequality and discrimination, it also highlights broader challenges in political economy research.;,citation_author=Laura Seelkopf;,citation_publication_date=2025-09-02;,citation_cover_date=2025-09-02;,citation_year=2025;,citation_fulltext_html_url=https://www.tandfonline.com/doi/full/10.1080/13501763.2025.2491755;,citation_issue=9;,citation_doi=10.1080/13501763.2025.2491755;,citation_issn=1350-1763, 1466-4429;,citation_volume=32;,citation_language=en-US;,citation_journal_title=Journal of European Public Policy;,citation_journal_abbrev=J. Eur. Public Policy;">
+<meta name="citation_reference" content="citation_title=The rise in female employment and the role of tax incentives. An empirical analysis of the Swedish individual tax reform of 1971;,citation_abstract=Sweden reached the 2009 OECD average level of female labor force participation already in 1974. Before 1971 spouses were taxed jointly. This meant that the wife’s financial gain of working was a function of the husband’s income. The higher income of the husband, the lower was the wife’s work incentive ceteris paribus. After the reform, the link between the husband’s income and the wife’s participation tax rate was, in principle, abolished. This paper exploits a rich longitudinal register data source and the large variation provided by the individual tax reform to analyze the evolution of female employment in Sweden in the years surrounding the 1971 reform. I provide clear evidence that employment grew considerably more among women married to high-income earners in the years following the announcement of the reform, especially among households with kids. Estimated participation elasticities are in the range 0.5–1 for the total sample.;,citation_author=Håkan Selin;,citation_publication_date=2014-10;,citation_cover_date=2014-10;,citation_year=2014;,citation_fulltext_html_url=http://link.springer.com/10.1007/s10797-013-9283-y;,citation_issue=5;,citation_doi=10.1007/s10797-013-9283-y;,citation_issn=0927-5940, 1573-6970;,citation_volume=21;,citation_language=en-US;,citation_journal_title=International Tax and Public Finance;,citation_journal_abbrev=Int. Tax Public Finance;">
+<meta name="citation_reference" content="citation_title=Introduction to econometrics;,citation_abstract=For courses in introductory econometrics. Engaging applications bring the theory and practice of modern econometrics to life Ensure students grasp the relevance of econometrics with Introduction to Econometrics - the text that connects modern theory and practice with motivating, engaging applications. The 4th Edition, Global Edition, maintains a focus on currency, while building on the philosophy that applications should drive the theory, not the other way around. The text incorporates real-world questions and data, and methods that are immediately relevant to the applications. With very large data sets increasingly being used in economics and related fields, a new chapter dedicated to Big Data helps students learn about this growing and exciting area. This coverage and approach make the subject come alive for students and helps them to become sophisticated consumers of econometrics. The full text downloaded to your computer With eBooks you can: search for key concepts, words and phrases make highlights and notes as you study share your notes with friends eBooks are downloaded to your computer and accessible either offline through the Bookshelf (available as a free download), available online and also via the iPad and Android apps. Upon purchase, you will receive via email the code and instructions on how to access this product. Time limit The eBooks products do not have an expiry date. You will continue to access your digital ebook products whilst you have your Bookshelf installed;,citation_author=James H. Stock;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_isbn=978-1-292-26445-5 978-1-292-26452-3;,citation_language=en-US;,citation_series_title=The Pearson series in economics;">
+<meta name="citation_reference" content="citation_title=Collective Household Models: Principles and Main Results;,citation_abstract=In the traditional approach to consumer behaviour it is assumed that households behave as if they were single decision-making units. This approach has methodological, empirical and welfare economic deficiencies. A valuable alternative to the traditional model is the collective approach to household behaviour. The collective approach explicitly takes account of the fact that multiperson households consist of several members which may have different preferences. Among these household members, an intrahousehold bargaining process is assumed to take place. In addition to providing an introduction to the collective approach, this survey intends to show how different collective household models, each with their own aims and assumptions, are connected.;,citation_author=Frederic Vermeulen;,citation_publication_date=2002-09;,citation_cover_date=2002-09;,citation_year=2002;,citation_fulltext_html_url=https://onlinelibrary.wiley.com/doi/10.1111/1467-6419.00177;,citation_issue=4;,citation_doi=10.1111/1467-6419.00177;,citation_issn=0950-0804, 1467-6419;,citation_volume=16;,citation_language=en-US;,citation_journal_title=Journal of Economic Surveys;,citation_journal_abbrev=J. Econ. Surv.;">
+<meta name="citation_reference" content="citation_title=Designing Difference in Difference Studies: Best Practices for Public Health Policy Research;,citation_abstract=The difference in difference (DID) design is a quasi-experimental research design that researchers often use to study causal relationships in public health settings where randomized controlled trials (RCTs) are infeasible or unethical. However, causal inference poses many challenges in DID designs. In this article, we review key features of DID designs with an emphasis on public health policy research. Contemporary researchers should take an active approach to the design of DID studies, seeking to construct comparison groups, sensitivity analyses, and robustness checks that help validate the method’s assumptions. We explain the key assumptions of the design and discuss analytic tactics, supplementary analysis, and approaches to statistical inference that are often important in applied research. The DID design is not a perfect substitute for randomized experiments, but it often represents a feasible way to learn about casual relationships. We conclude by noting that combining elements from multiple quasi-experimental techniques may be important in the next wave of innovations to the DID approach.;,citation_author=Coady Wing;,citation_author=Kosali Simon;,citation_author=Ricardo A. Bello-Gomez;,citation_publication_date=2018-04-01;,citation_cover_date=2018-04-01;,citation_year=2018;,citation_fulltext_html_url=https://www.annualreviews.org/content/journals/10.1146/annurev-publhealth-040617-013507;,citation_issue=1;,citation_doi=10.1146/annurev-publhealth-040617-013507;,citation_issn=0163-7525, 1545-2093;,citation_volume=39;,citation_language=en-US;,citation_journal_title=Annual Review of Public Health;,citation_journal_abbrev=Annu. Rev. Public Health;">
+<meta name="citation_reference" content="citation_title=Women’s labor force participation;,citation_author=Anne E. Winkler;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_fulltext_html_url=https://wol.iza.org/articles/womens-labor-force-participation/long;,citation_doi=10.15185/izawol.289.v2;,citation_issn=20549571;,citation_volume=2;,citation_language=en-US;,citation_journal_title=IZA World of Labor;,citation_journal_abbrev=IZA World Labor;">
+<meta name="citation_reference" content="citation_title=Estimating Group-Time Average Treatment Effects;,citation_abstract=This vignette discusses the basics of using Difference-in-Differences (DiD) designs to identify and estimate the average effect of participating in a treatment with a particular focus on tools from the did package. The background article for it is Callaway and Sant’Anna (2021), “Difference-in-Differences with Multiple Time Periods”.;,citation_author=Brantly Callaway;,citation_author=Pedro H. C. Sant’Anna;,citation_fulltext_html_url=https://cran.r-project.org/web/packages/did/vignettes/did-basics.html;">
+<meta name="citation_reference" content="citation_title=Difference-in-Difference (DiD);,citation_abstract=Welcome to the DiD revolution.;,citation_fulltext_html_url=https://asjadnaqvi.github.io/DiD/;,citation_language=en-US;,citation_publisher=DiD;">
+</head>
+
+<body class="quarto-light">
+
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Does optional individual taxation increase female labor supply?</h1>
+            <p class="subtitle lead">Evidence from the 2018 Luxembourg Reform</p>
+          </div>
+
+    
+    <div class="quarto-title-meta-container">
+      <div class="quarto-title-meta-column-start">
+        
+        <div class="quarto-title-meta">
+
+                <div>
+            <div class="quarto-title-meta-heading">Authors</div>
+            <div class="quarto-title-meta-contents">
+                        <p>Cédric Hübner </p>
+                        <p>Nadine Theisen </p>
+                        <p>Kwangho Yo </p>
+                      </div>
+          </div>
+                
+                <div>
+            <div class="quarto-title-meta-heading">Published</div>
+            <div class="quarto-title-meta-contents">
+              <p class="date">August 31, 2026</p>
+            </div>
+          </div>
+          
+                
+              </div>
+      </div>
+      <div class="quarto-title-meta-column-end quarto-other-formats-target">
+      <div class="quarto-alternate-formats"><div class="quarto-title-meta-heading">Other Formats</div><div class="quarto-title-meta-contents"><p><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></p></div></div></div>
+    </div>
+
+    <div>
+      <div class="abstract">
+        <div class="block-title">Abstract</div>
+        Increasing women’s participation in the labor market is an important policy goal. However, in countries where married couples are taxed based on their shared income instead of individually, the nature of that system can disincentivize women from working more. Previous reforms toward individual taxation have proven effective in increasing the working hours of women. This paper investigates whether a 2018 reform in Luxembourg, which gave married couples the option to choose between joint and individual taxation, had the same effect. Based on models of utility maximization and intra-household bargaining, we assume that such a reform leads to an increase in working hours even though the change is not mandatory. Our analysis uses a difference-in-differences approach on individual-level data from Luxembourg and five other countries between 2012 and 2022. The resulting models show no effect of the reform on the working hours of women when controlling for education and children. However, the results are inconclusive, primarily due to methodological limitations and potential external influences.
+      </div>
+    </div>
+
+
+    <div class="quarto-other-links-text-target">
+    </div>  </div>
+</header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#the-2018-luxembourg-income-tax-reform" id="toc-the-2018-luxembourg-income-tax-reform" class="nav-link" data-scroll-target="#the-2018-luxembourg-income-tax-reform"><span class="header-section-number">2</span> The 2018 Luxembourg Income Tax Reform</a></li>
+  <li><a href="#models-of-utility-maximization-and-the-distribution-of-labor-under-different-tax-systems" id="toc-models-of-utility-maximization-and-the-distribution-of-labor-under-different-tax-systems" class="nav-link" data-scroll-target="#models-of-utility-maximization-and-the-distribution-of-labor-under-different-tax-systems"><span class="header-section-number">3</span> Models of utility maximization and the distribution of labor under different tax systems</a>
+  <ul class="collapse">
+  <li><a href="#female-labor-activity-under-individual-taxation" id="toc-female-labor-activity-under-individual-taxation" class="nav-link" data-scroll-target="#female-labor-activity-under-individual-taxation"><span class="header-section-number">3.1</span> Female labor activity under individual taxation</a></li>
+  <li><a href="#effects-of-household-decision-making-on-female-labor" id="toc-effects-of-household-decision-making-on-female-labor" class="nav-link" data-scroll-target="#effects-of-household-decision-making-on-female-labor"><span class="header-section-number">3.2</span> Effects of household decision-making on female labor</a></li>
+  <li><a href="#hypotheses" id="toc-hypotheses" class="nav-link" data-scroll-target="#hypotheses"><span class="header-section-number">3.3</span> Hypotheses</a></li>
+  </ul></li>
+  <li><a href="#research-design" id="toc-research-design" class="nav-link" data-scroll-target="#research-design"><span class="header-section-number">4</span> Research Design</a>
+  <ul class="collapse">
+  <li><a href="#data-and-operationalization" id="toc-data-and-operationalization" class="nav-link" data-scroll-target="#data-and-operationalization"><span class="header-section-number">4.1</span> Data and operationalization</a></li>
+  <li><a href="#methodological-assumptions" id="toc-methodological-assumptions" class="nav-link" data-scroll-target="#methodological-assumptions"><span class="header-section-number">4.2</span> Methodological assumptions</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">5</span> Results</a></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion"><span class="header-section-number">6</span> Discussion</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">7</span> Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="analysis-preview.html"><i class="bi bi-journal-code"></i>Analysis</a></li><li><a href="index-preview.html"><i class="bi bi-journal-code"></i>Article Notebook</a></li></ul></div></nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+  
+
+
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
+<p>Taxes are not only the most important source of state revenue, but their design also influences individuals’ behavior, either intentionally or accidentally. Income taxes are no exception. In simplified terms, individuals calculate whether the additional income they would earn by working more hours is worth the extra time spent compared to how they could have spent that time otherwise. As additional income is influenced by tax rates, the design of the tax system affects individual labor supply, i.e., how much paid work a person does per week. Therefore, increasing the individual labor supply becomes an important policy goal for states, not only to increase tax revenue, but also to address the growing issues caused by demographic changes, such as a shortage of skilled workers and mounting pressure on social security systems.</p>
+<p>Women have the greatest untapped potential for higher labor force activity. One way to increase women’s working hours is through the tax system. In some countries such as Germany or France, the rate of taxation for married couples is calculated based on their combined income. This creates a disincentive for secondary earners, who are usually women, to work more hours, which often leads to them taking on more domestic work and childcare. In addition to negatively impacting working hours, the design of the tax system perpetuates gender inequality, by causing lower individual income, pension payments, and consequently, less financial security for women later in life.</p>
+<p>To address these suboptimal outcomes and achieve higher workforce activity, critics often advocate shifting from joint to individual taxation. The most recent example of a country following this direction is Luxembourg: since 2018, married couples have the possibility to voluntarily choose to be taxed individually. This paper examines how the reform has affected female labor activity, investigating whether shifting toward optional individual taxation is sufficient to increase women’s working hours.</p>
+<p>The first part of the paper introduces the theoretical argument. Based on the concept of individual utility maximization and intra-household bargaining, we hypothesize that women’s working hours will increase even under optional individual taxation. The next section is devoted to the research design. Here we present the difference-in-differences design used to analyze the effects of the tax reform, argue why it is suited to determine causal effects, and lay out underlying assumptions. In addition, we introduce the data and variables used for the analysis. The following results and robustness checks show that there is no reliable evidence that introducing the option for individual taxation significantly increased female working hours as a result of the 2018 reform. We conclude by discussing and summarizing our findings.</p>
+</section>
+<section id="the-2018-luxembourg-income-tax-reform" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="the-2018-luxembourg-income-tax-reform"><span class="header-section-number">2</span> The 2018 Luxembourg Income Tax Reform</h2>
+<p>Luxembourg is a particularly relevant case regarding its evolving tax system. Historically, married couples were taxed jointly through compulsory income splitting, while registered partners could also opt for joint taxation under certain conditions. Under joint taxation with income splitting, both spouses’ incomes are added together and divided by two. The progressive tax rate is then applied to this half, and the resulting tax amount is doubled to determine the couple’s total tax liability. As the income tax scale is progressive, the benefit of splitting income depends on the difference between the spouses’ incomes. This means conversely that, for couples with equal incomes, the tax rate applied to half of their total taxable income is the same. Where there are significant differences in income, this results in an advantage at the couple level, as the main earner’s income is placed in a lower tax bracket because it is treated as if both partners had each earned half of the total taxable income. However, the amount of the benefit also depends on total taxable income and the structure of the progressive tax scale, meaning that the effect is not linear.</p>
+<p>Since the 2018 tax year, married couples have been able to choose among joint taxation with income splitting, pure individual taxation, and income reallocation <span class="citation" data-cites="euromod2022">(<a href="#ref-euromod2022" role="doc-biblioref">El Mashlohi et al., 2026</a>)</span>. With individual taxation, each spouse files their income tax separately. Under individual taxation with reallocation, the couple’s total adjusted taxable income is first determined jointly and then allocated between the spouses. Each spouse is subsequently taxed separately on their allocated share. If no other allocation is specified, the income is divided equally.</p>
+<p>A further step toward individual taxation is planned for 2028 to replace the existing tax classes with a single tax class and individual tax, starting with newly married and registered couples. Taxpayers who were jointly taxed before 2028 would be allowed to remain under the previous tariff for a transition period of 25 years, assuming they do not switch permanently to the individual assessment earlier <span class="citation" data-cites="ministeredesfinances2026">(<a href="#ref-ministeredesfinances2026" role="doc-biblioref">Ministère des Finances, 2026</a>)</span>.</p>
+<p>Existing research also suggests that full individualization could have meaningful effects on labor supply in Luxembourg. <span class="citation" data-cites="islam2020">Islam et al. (<a href="#ref-islam2020" role="doc-biblioref">2020</a>)</span> simulates a reform from joint to individual taxation and estimates an increase of around 2.27% in married women’s labor supply, while married men’s labor supply remains largely unchanged. This way, the case could be insightful since the 2018 reform introduced individual taxation as an option on top of the marital splitting. The optional model is less explored in existing literature on replacing reforms <span class="citation" data-cites="kaliskova2014 selin2014 crossley2007">(e.g., <a href="#ref-kaliskova2014" role="doc-biblioref">Kalíšková, 2014</a>; <a href="#ref-crossley2007" role="doc-biblioref">Crossley &amp; Jeon, 2007</a>; <a href="#ref-selin2014" role="doc-biblioref">Selin, 2014</a>)</span>. So, the 2018 reform in Luxembourg provides a case to test whether optional economic individualization, meaning individual independence over household utility here, suffices to generate measurable labor-supply effects.</p>
+</section>
+<section id="models-of-utility-maximization-and-the-distribution-of-labor-under-different-tax-systems" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="models-of-utility-maximization-and-the-distribution-of-labor-under-different-tax-systems"><span class="header-section-number">3</span> Models of utility maximization and the distribution of labor under different tax systems</h2>
+<p>A country’s specific tax system has a great influence on individual behavior. Individuals make decisions in the allocation of resources, maximizing utility given income and prices. When conditions change, choices are reoriented toward a new best set. In this logic, one’s behavior reflects a set of income and prices, pursuing a utility-maximizing option <span class="citation" data-cites="samuelson1938">(<a href="#ref-samuelson1938" role="doc-biblioref">Samuelson, 1938, p. 6</a>)</span>. Because income is a key determinant of consumption, and consumption is a core part of utility <span class="citation" data-cites="hausman1985">(<a href="#ref-hausman1985" role="doc-biblioref">Hausman, 1985, p. 4</a>)</span>, any change in the tax system that alters wages reshapes the individual utility. Thus, the tax system fundamentally affects the utility assessment process. In this light, tax models are central to understanding how individuals respond to policy change.</p>
+<p>From this economic point of departure and with the background on how joint taxation affects the household and spouses individually, the next sections elaborate further on the theoretical assumptions from the body of literature that build the foundation for our argument. In what follows, our hypotheses are presented along with the theoretical argument.</p>
+<section id="female-labor-activity-under-individual-taxation" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="female-labor-activity-under-individual-taxation"><span class="header-section-number">3.1</span> Female labor activity under individual taxation</h3>
+<p>The nature of the tax system plays a significant role in individual decision-making processes, but effects oftentimes vary between genders. One of the better explored topics is the change in female labor supply with the reform of personal income tax for married couples. Previous research asserts that the general tendency of female labor supply, especially among married women, is assumed to rise with the introduction of individual taxation <span class="citation" data-cites="bick2017 selin2014 lalumia2008">(<a href="#ref-bick2017" role="doc-biblioref">Bick &amp; Fuchs-Schündeln, 2017</a>; <a href="#ref-lalumia2008" role="doc-biblioref">LaLumia, 2008, p. 11</a>; <a href="#ref-selin2014" role="doc-biblioref">Selin, 2014, p. 22</a>)</span>, whereas male labor supply does not seem to be affected <span class="citation" data-cites="kaliskova2014 lalumia2008">(<a href="#ref-kaliskova2014" role="doc-biblioref">Kalíšková, 2014, p. 2</a>; <a href="#ref-lalumia2008" role="doc-biblioref">LaLumia, 2008, p. 11</a>)</span>. In theoretical accounts, an increase in female labor supply is unambiguous following a change in tax rate.</p>
+<p>When the tax system changes, the supply of labor is mainly determined by two effects: the substitution and income effects. In calculations on the allocation of labor and leisure, the opportunity cost of choosing one over the other is considered. Here, on the extensive margin, the female labor supply is primarily driven by the substitution effect, since the income effect does not exist because of non-participation in the labor market. Moreover, the elasticity of wages matters in magnitude. Women are conventionally assumed to have a comparative advantage in domestic labor over men, so that their labor supply is more elastic to income changes than men’s <span class="citation" data-cites="alesina2011">(<a href="#ref-alesina2011" role="doc-biblioref">Alesina et al., 2011, p. 4</a>)</span>, consistent with empirical findings <span class="citation" data-cites="kaliskova2014 lalumia2008">(<a href="#ref-kaliskova2014" role="doc-biblioref">Kalíšková, 2014</a>; <a href="#ref-lalumia2008" role="doc-biblioref">LaLumia, 2008</a>)</span>.</p>
+</section>
+<section id="effects-of-household-decision-making-on-female-labor" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="effects-of-household-decision-making-on-female-labor"><span class="header-section-number">3.2</span> Effects of household decision-making on female labor</h3>
+<p>Although individual taxation is expected to increase the number of hours women work, it is unclear what happens when both options exist within a tax system. The choices of married couples can be explained by looking at economic models of household behavior. The model of joint taxation with income splitting complements a traditional unitary household model in which spouses specialize in different forms of work, with one partner primarily in paid employment and the other more engaged in unpaid care and domestic work. Becker’s <span class="citation" data-cites="becker1974">(<a href="#ref-becker1974" role="doc-biblioref">1974</a>)</span> household model explains the specialization through efficiency gains from the division of labor. In contrast, Iversen and Rosenbluth’s <span class="citation" data-cites="iversen2006">(<a href="#ref-iversen2006" role="doc-biblioref">2006</a>)</span> bargaining model is oriented at the intra-household perspective with the individual as the relevant unit <span class="citation" data-cites="iversen2006">(<a href="#ref-iversen2006" role="doc-biblioref">2006, pp. 1–2</a>)</span>. Based on this premise, joint taxation can be conceptualized as a policy that incentivizes couples to optimize their total disposable income. This policy maximizes total household disposable income but does not necessarily improve the individual economic position of spouses. However, the traditional household model does not align with historical and theoretical shifts in the gender gap in labor market activity, economic dependence within marriage, and longevity of marriages in western welfare states.</p>
+<p>In their bargaining model, <span class="citation" data-cites="iversen2006">Iversen &amp; Rosenbluth (<a href="#ref-iversen2006" role="doc-biblioref">2006, pp. 1–4</a>)</span> conceptualize that if marriage is a contract that can be dissolved, the assumption of unitary interests between spouses falls short. Instead of a couple with one shared set of interests, the two partners are conceptualized as individuals with their own economic interests, leading to a bargaining understanding of the distribution of work. Applied to income taxation, the secondary earner would be expected to prefer individual taxation if it maximizes individual economic assets even if the benefit in household income would be larger if taxed jointly.</p>
+<p>At the macro level, <span class="citation" data-cites="edlund2002">Edlund &amp; Pande (<a href="#ref-edlund2002" role="doc-biblioref">2002</a>)</span> argues that while marriage historically pooled economic interests, the decline of dependence can make individual interests more salient, contributing to women supporting redistribution more than before compared to men. Individual taxation is more likely to be opted for if the perspective of the secondary earner shapes the decision and the unitary model loses importance.</p>
+<p>In addition to considerations related to maximizing disposable income, two more factors determine the level of female labor activity. First, higher levels of education tend to be associated with higher pay. As this increases the utility of paid work, individuals are more likely to shift their priorities away from unpaid work in the household <span class="citation" data-cites="busso2015">(<a href="#ref-busso2015" role="doc-biblioref">Busso &amp; Romero Fonseca, 2015, p. 204</a>)</span>.</p>
+<p>The second factor impacting women’s working hours is family planning. Having children not only leads mothers (and to some extent also fathers) to leave the workforce temporarily around the time of birth. It also influences labor supply since it incurs the opportunity cost of working outside the home. Furthermore, in a context of different relative wage returns of partners in the household, the one with the lower income prospects is more often to go out of work to some extent <span class="citation" data-cites="busso2015">(<a href="#ref-busso2015" role="doc-biblioref">Busso &amp; Romero Fonseca, 2015, p. 204</a>)</span>.</p>
+</section>
+<section id="hypotheses" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="hypotheses"><span class="header-section-number">3.3</span> Hypotheses</h3>
+<p>Taken together, this paper aims to test the impact of the introduction of optional individual taxation on female labor supply in Luxembourg. Therein, it differs from previous studies, which examine changes to compulsory individual filing. Since the Luxembourg case allows couples to keep filing jointly, it is worth exploring whether the outcomes are captured by the main theoretical discourses.</p>
+<p>Based on optimal utility theory in taxation, it is assumed that women tend to work more under individual taxation. First, under optional individual taxation, individuals may project their potential earnings according to Nash-Pareto. Second, there is a possibility that the income of the secondary earner would fall into a higher tax bracket under joint taxation, which undermines Pareto-optimality. Therefore, it is expected that women are more likely to select individual taxation, increasing labor supply.</p>
+<p>Drawing on the bargaining model, it is anticipated that women are inclined to choose individual taxation. The traditional assumption of family as an economic unit has diminished with increasing female economic independence. In other words, a unitary family is no longer the minimum unit; instead, intra-household bargaining enables individuals to prioritize and maximize their utility and individual outside options. The relative position of the secondary earner in the bargain might open the opportunity for decision-making that prioritizes individual income, even if the household net income decreases. To sum up, we hypothesize:</p>
+<p>H1: Married women’s weekly working hours will increase under optional individual taxation.</p>
+<p>H2: Married men’s working hours will remain constant with the introduction of optional individual taxation.</p>
+</section>
+</section>
+<section id="research-design" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="research-design"><span class="header-section-number">4</span> Research Design</h2>
+<p>To examine the effects of the Luxembourg tax reform on working hours, we estimate a difference-in-differences model (below DiD). This approach is commonly used to analyze causal effects in situations where random assignment into treatment and control groups is not feasible. The method has therefore been widely applied in policy change research in general, as well as in research examining the impact of tax reforms on labor supply in particular <span class="citation" data-cites="herold2025 doorley2018 kaliskova2014 selin2014 crossley2007">(see for example <a href="#ref-herold2025" role="doc-biblioref">Herold et al., 2025</a>; <a href="#ref-crossley2007" role="doc-biblioref">Crossley &amp; Jeon, 2007</a>; <a href="#ref-doorley2018" role="doc-biblioref">Doorley, 2018</a>; <a href="#ref-kaliskova2014" role="doc-biblioref">Kalíšková, 2014</a>; <a href="#ref-selin2014" role="doc-biblioref">Selin, 2014</a>)</span>.</p>
+<p>In a DiD design, there is a treatment group and a control group, and the outcome variable is observed for both before and after the treatment. In our case, the treatment is the 2018 tax reform with the introduction of optional individual taxation and the outcome is female working hours. The treatment and control groups can vary in their initial level of the outcome. After the policy change, the treatment group is expected to deviate from the control group if the reform has an effect, meaning that the difference in the outcome variable is smaller or larger than before. In our case, the DiD design is able to capture whether female employment in Luxembourg increased or decreased more strongly after the reform than it did in comparable untreated countries, while allowing for pre-existing differences in employment levels between countries.</p>
+<p>We deem this methodological approach to be appropriate for two reasons. First, it removes time-invariant differences between sample groups. Since our case is based on non-random assignment, it is subject to time-varying confounders: for example, a seemingly irrelevant change might have a significant impact on female labor. This, in turn, leads to a high possibility of misattribution in estimation. Second, the method allows us to obtain counterfactual estimates. By adopting the parallel trends assumption between treatment and control groups, it projects hypothetical estimates from the treated group where no treatment exists. By doing so, it enables us to compare actual trends and counterfactual estimates in our case. In this regard, DiD appears to be the most suitable approach to test the impact of tax reform in Luxembourg.</p>
+<section id="data-and-operationalization" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="data-and-operationalization"><span class="header-section-number">4.1</span> Data and operationalization</h3>
+<p>For our analysis, we rely on individual-level data from the Luxembourg Income Study, which aggregates and harmonizes a number of national cross-sectional surveys into a single dataset. We use data from Luxembourg for the treatment group and data from Belgium, France, Germany, Spain, and Ireland for the control group. Both were collected repeatedly between 2012 and 2022. Because each survey is based on a randomly taken sample from the same population, the “earlier cross-section can be used as a surrogate for the individuals in the treatment and control groups in the later cross-section” <span class="citation" data-cites="stock2020">(<a href="#ref-stock2020" role="doc-biblioref">Stock, 2020, p. 494</a>)</span>. Including multiple countries in the control group has the advantage of delivering more precise estimates.</p>
+<p>The specific model we use for our analysis is a two-way fixed effects model of the following form: <span class="math inline">\(y_{it} = \beta_1 x_{it} + \alpha_i + \delta_t + X'_{it} + u_{it}\)</span></p>
+<p>The data are operationalized as follows: As the main outcome <span class="math inline">\(y\)</span> we use a variable for working hours. Here, respondents are asked how many hours per week they work in their main job.</p>
+<p>As for the independent variable, we first create a binary dummy variable <span class="math inline">\(x_{it}\)</span> that captures the treatment status. Here, all observations from married individuals in Luxembourg who lie in the post-treatment period, i.e., after the tax reform, are coded with the value one. The remaining observations from Luxembourg in the pre-treatment period and the control countries in both periods are coded as zero, as neither of those experienced the tax reform. In our models, the coefficient of this treatment variable indicates the effect of the reform on the overall population, rather than on individuals who actually opt for individual taxation. The coefficients therefore represent an intent-to-treat effect that captures the effect of having the option to file taxes individually, including couples who continued to file jointly. Thus, incomplete take-up might underestimate the effect of couples who actually opt for individual filing.</p>
+<p>For the country-fixed effects <span class="math inline">\(\alpha_i\)</span> as well as the time-fixed effects <span class="math inline">\(\delta_t\)</span>, we rely on variables in the dataset, capturing the individual’s specific country and the reference year of the respective survey. As controls <span class="math inline">\(X'_{it}\)</span>, we use individual-level variables capturing levels of education and a binary variable indicating whether children are present in the household. Including these controls not only addresses potential confounding effects but also has the function of minimizing potential distortions caused by differences in the distribution of these variables over time and between countries <span class="citation" data-cites="bosco2025">(<a href="#ref-bosco2025" role="doc-biblioref">Bosco &amp; Maranzano, 2025</a>)</span>. In order to approximate the results to the overall population, we used the normalized, individual-level weight variable provided by the dataset.</p>
+</section>
+<section id="methodological-assumptions" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="methodological-assumptions"><span class="header-section-number">4.2</span> Methodological assumptions</h3>
+<p>The DiD method depends on a number of assumptions that need to be fulfilled to obtain reliable results: First, the parallel trend assumption supposes that the outcome of interest would have taken the same trajectory in both the treatment and control group in the absence of a treatment <span class="citation" data-cites="callaway2022">(<a href="#ref-callaway2022" role="doc-biblioref">Callaway, 2022, p. 3</a>)</span>. In our case, this means that the average working hours would have developed at the same rate in Luxembourg as in the control countries if the reform had not been implemented. Since the assumption is based on a counterfactual, it cannot be empirically tested for designs that rely on the comparison of two time periods. However, a graphical comparison of the pre-treatment trend can be used as a rough approximation to show parallel trends before the treatment <span class="citation" data-cites="wing2018">(<a href="#ref-wing2018" role="doc-biblioref">Wing et al., 2018, p. 459</a>)</span>. We present such a comparison as part of our robustness checks in the result section.</p>
+<p>A second assumption is that individuals in the treatment group are unable to anticipate the treatment <span class="citation" data-cites="bosco2025">(<a href="#ref-bosco2025" role="doc-biblioref">Bosco &amp; Maranzano, 2025, p. 6</a>)</span>. In theory, individuals could adjust their weekly working hours between the announcement of the policy and its implementation. However, we expect that individuals cannot flexibly adjust the hours they work in a short period of time, so anticipation effects are likely to be negligible.</p>
+<p>Further, it is assumed that selection into treatment has to be exogenous and not made by the individuals themselves. Since marital status is a criterion for joint taxation and the reform, individuals can in principle self-select into or out of treatment through marriage or divorce. The reform might have altered couples’ incentives to get married. For example, couples with a preference for individual taxation might have avoided getting married before the reform. We therefore cannot fully rule out selection bias arising from endogenous marital status.</p>
+<p>Lastly, the DiD method is based on the assumption that there are no spillover effects, meaning that the treatment only affects individuals in the treatment group but not in the control group <span class="citation" data-cites="bosco2025">(<a href="#ref-bosco2025" role="doc-biblioref">Bosco &amp; Maranzano, 2025, p. 15</a>)</span>. This is potentially problematic as a sizable share of Luxembourg’s working population consists of cross-border commuters <span class="citation" data-cites="leduc2025">(<a href="#ref-leduc2025" role="doc-biblioref">Leduc &amp; Sierminska, 2025, p. 1</a>)</span>. Therefore, individuals who, for instance, live in Germany and work in Luxembourg would be subject to the treatment, as their income is taxed in Luxembourg. While the dataset from Luxembourg only includes residents, these individuals would be excluded from the data. They could, however, potentially be included in the control group if they took part in the German survey. As there is no available data variable that would allow us to exclude cross-border commuters, we cannot mitigate this problem. However, we do not expect this to have a significant impact on the results, since the share of French and German respondents this applies to is likely to be minimal.</p>
+</section>
+</section>
+<section id="results" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="results"><span class="header-section-number">5</span> Results</h2>
+<p>To analyze the effect of the tax reform on female working hours, we first estimate a set of models based on married women as the treatment group, as well as alternative specifications based on different subpopulations, to substantiate our results. All of these models are presented in Table 1. Next, we present further robustness tests, focusing on pre-trends of working hours before the reform.</p>
+<div class="cell">
+<div id="tbl-did" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-did-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Difference-in-differences models
+</figcaption>
+<div aria-describedby="tbl-did-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<script src="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.js"></script>
+
+    <script>
+      // Create table-specific functions using external factory
+      const tableFns_roeuxx3jpaw0jhbvz9ko = TinyTable.createTableFunctions("tinytable_roeuxx3jpaw0jhbvz9ko");
+      // tinytable span after
+      window.addEventListener('load', function () { tableFns_roeuxx3jpaw0jhbvz9ko.spanCell(13, 1, 1, 5) })
+      window.addEventListener('load', function () { tableFns_roeuxx3jpaw0jhbvz9ko.spanCell(10, 1, 1, 5) })
+      window.addEventListener('load', function () { tableFns_roeuxx3jpaw0jhbvz9ko.spanCell(1, 1, 1, 5) })
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: '-1', j: 3 }, { i: '-1', j: 4 }, { i: '-1', j: 5 } ], css_id: 'tinytable_css_vmgwugtd2gkeppoox041',}, 
+          { positions: [ { i: '15', j: 2 }, { i: '15', j: 3 }, { i: '15', j: 4 }, { i: '15', j: 5 } ], css_id: 'tinytable_css_x9l6ushgsliq0zcnsu66',}, 
+          { positions: [ { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 }, { i: '7', j: 2 }, { i: '8', j: 2 }, { i: '9', j: 2 }, { i: '10', j: 2 }, { i: '11', j: 2 }, { i: '12', j: 2 }, { i: '13', j: 2 }, { i: '14', j: 2 }, { i: '1', j: 3 }, { i: '2', j: 3 }, { i: '3', j: 3 }, { i: '4', j: 3 }, { i: '5', j: 3 }, { i: '6', j: 3 }, { i: '7', j: 3 }, { i: '8', j: 3 }, { i: '9', j: 3 }, { i: '10', j: 3 }, { i: '11', j: 3 }, { i: '12', j: 3 }, { i: '13', j: 3 }, { i: '14', j: 3 }, { i: '1', j: 4 }, { i: '2', j: 4 }, { i: '3', j: 4 }, { i: '4', j: 4 }, { i: '5', j: 4 }, { i: '6', j: 4 }, { i: '7', j: 4 }, { i: '8', j: 4 }, { i: '9', j: 4 }, { i: '10', j: 4 }, { i: '11', j: 4 }, { i: '12', j: 4 }, { i: '13', j: 4 }, { i: '14', j: 4 }, { i: '1', j: 5 }, { i: '2', j: 5 }, { i: '3', j: 5 }, { i: '4', j: 5 }, { i: '5', j: 5 }, { i: '6', j: 5 }, { i: '7', j: 5 }, { i: '8', j: 5 }, { i: '9', j: 5 }, { i: '10', j: 5 }, { i: '11', j: 5 }, { i: '12', j: 5 }, { i: '13', j: 5 }, { i: '14', j: 5 } ], css_id: 'tinytable_css_qe5511yjmge77ef9x7ds',}, 
+          { positions: [ { i: '0', j: 2 }, { i: '0', j: 3 }, { i: '0', j: 4 }, { i: '0', j: 5 } ], css_id: 'tinytable_css_xypztbpak7dyav177ru7',}, 
+          { positions: [ { i: '-1', j: 2 } ], css_id: 'tinytable_css_767fh6xs77t0bbeo96qh',}, 
+          { positions: [ { i: '15', j: 1 } ], css_id: 'tinytable_css_59b2fp91icvtyd9i3phg',}, 
+          { positions: [ { i: '0', j: 1 } ], css_id: 'tinytable_css_nflbwj7py2zvjw3unt47',}, 
+          { positions: [ { i: '-1', j: 1 } ], css_id: 'tinytable_css_pii501o8kn1ueodahg02',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  tableFns_roeuxx3jpaw0jhbvz9ko.styleCell(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vincentarelbundock/tinytable@main/inst/tinytable.css">
+    <style>
+    /* tinytable css entries after */
+    #tinytable_roeuxx3jpaw0jhbvz9ko td.tinytable_css_vmgwugtd2gkeppoox041, #tinytable_roeuxx3jpaw0jhbvz9ko th.tinytable_css_vmgwugtd2gkeppoox041 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.03em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --line-type-bottom: solid; --line-type-left: solid; --line-type-right: solid; --line-type-top: solid; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center }
+    #tinytable_roeuxx3jpaw0jhbvz9ko td.tinytable_css_x9l6ushgsliq0zcnsu66, #tinytable_roeuxx3jpaw0jhbvz9ko th.tinytable_css_x9l6ushgsliq0zcnsu66 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --line-type-bottom: solid; --line-type-left: solid; --line-type-right: solid; --line-type-top: solid; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center }
+    #tinytable_roeuxx3jpaw0jhbvz9ko td.tinytable_css_qe5511yjmge77ef9x7ds, #tinytable_roeuxx3jpaw0jhbvz9ko th.tinytable_css_qe5511yjmge77ef9x7ds { text-align: center }
+    #tinytable_roeuxx3jpaw0jhbvz9ko td.tinytable_css_xypztbpak7dyav177ru7, #tinytable_roeuxx3jpaw0jhbvz9ko th.tinytable_css_xypztbpak7dyav177ru7 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --line-type-bottom: solid; --line-type-left: solid; --line-type-right: solid; --line-type-top: solid; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center }
+    #tinytable_roeuxx3jpaw0jhbvz9ko td.tinytable_css_767fh6xs77t0bbeo96qh, #tinytable_roeuxx3jpaw0jhbvz9ko th.tinytable_css_767fh6xs77t0bbeo96qh {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.03em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --line-type-bottom: solid; --line-type-left: solid; --line-type-right: solid; --line-type-top: solid; --trim-bottom-left: 3%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center }
+    #tinytable_roeuxx3jpaw0jhbvz9ko td.tinytable_css_59b2fp91icvtyd9i3phg, #tinytable_roeuxx3jpaw0jhbvz9ko th.tinytable_css_59b2fp91icvtyd9i3phg {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.08em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --line-type-bottom: solid; --line-type-left: solid; --line-type-right: solid; --line-type-top: solid; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_roeuxx3jpaw0jhbvz9ko td.tinytable_css_nflbwj7py2zvjw3unt47, #tinytable_roeuxx3jpaw0jhbvz9ko th.tinytable_css_nflbwj7py2zvjw3unt47 {  position: relative; --border-bottom: 1; --border-left: 0; --border-right: 0; --border-top: 0; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.05em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.1em; --line-type-bottom: solid; --line-type-left: solid; --line-type-right: solid; --line-type-top: solid; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%;  }
+    #tinytable_roeuxx3jpaw0jhbvz9ko td.tinytable_css_pii501o8kn1ueodahg02, #tinytable_roeuxx3jpaw0jhbvz9ko th.tinytable_css_pii501o8kn1ueodahg02 {  position: relative; --border-bottom: 0; --border-left: 0; --border-right: 0; --border-top: 1; --line-color-bottom: var(--tt-line-color); --line-color-left: var(--tt-line-color); --line-color-right: var(--tt-line-color); --line-color-top: var(--tt-line-color); --line-width-bottom: 0.1em; --line-width-left: 0.1em; --line-width-right: 0.1em; --line-width-top: 0.08em; --line-type-bottom: solid; --line-type-left: solid; --line-type-right: solid; --line-type-top: solid; --trim-bottom-left: 0%; --trim-bottom-right: 0%; --trim-left-bottom: 0%; --trim-left-top: 0%; --trim-right-bottom: 0%; --trim-right-top: 0%; --trim-top-left: 0%; --trim-top-right: 0%; ; text-align: center }
+    </style>
+    <div class="container">
+      <table class="tinytable" id="tinytable_roeuxx3jpaw0jhbvz9ko" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        
+        <thead>
+<tr>
+<th scope="col" align="center" colspan="1" data-row="-1" data-col="1"> </th>
+<th scope="col" align="center" colspan="4" data-row="-1" data-col="2">Weekly working hours</th>
+</tr>
+              <tr>
+                <th scope="col" data-row="0" data-col="1"> </th>
+                <th scope="col" data-row="0" data-col="2">(1)
+Baseline<br>no controls</th>
+                <th scope="col" data-row="0" data-col="3">(2)
+With<br>controls</th>
+                <th scope="col" data-row="0" data-col="4">(3)
+Placebo<br>(married men)</th>
+                <th scope="col" data-row="0" data-col="5">(4)
+Placebo<br>(unmarried women)</th>
+              </tr>
+        </thead>
+        <tfoot><tr><td colspan="5">Clustered (country) standard errors in parentheses. *** p &lt; 0.01, ** p &gt; 0.05, * p &gt; 0.1</td></tr></tfoot>
+        <tbody>
+                <tr>
+                  <td data-row="1" data-col="1">Variables</td>
+                  <td data-row="1" data-col="2">Variables</td>
+                  <td data-row="1" data-col="3">Variables</td>
+                  <td data-row="1" data-col="4">Variables</td>
+                  <td data-row="1" data-col="5">Variables</td>
+                </tr>
+                <tr>
+                  <td data-row="2" data-col="1">Treatment</td>
+                  <td data-row="2" data-col="2">1.337*</td>
+                  <td data-row="2" data-col="3">-0.184</td>
+                  <td data-row="2" data-col="4">-2.193*</td>
+                  <td data-row="2" data-col="5">0.264</td>
+                </tr>
+                <tr>
+                  <td data-row="3" data-col="1"></td>
+                  <td data-row="3" data-col="2">(0.584)</td>
+                  <td data-row="3" data-col="3">(0.589)</td>
+                  <td data-row="3" data-col="4">(0.887)</td>
+                  <td data-row="3" data-col="5">(1.078)</td>
+                </tr>
+                <tr>
+                  <td data-row="4" data-col="1">Education (middle)</td>
+                  <td data-row="4" data-col="2"></td>
+                  <td data-row="4" data-col="3">6.457**</td>
+                  <td data-row="4" data-col="4"></td>
+                  <td data-row="4" data-col="5"></td>
+                </tr>
+                <tr>
+                  <td data-row="5" data-col="1"></td>
+                  <td data-row="5" data-col="2"></td>
+                  <td data-row="5" data-col="3">(1.616)</td>
+                  <td data-row="5" data-col="4"></td>
+                  <td data-row="5" data-col="5"></td>
+                </tr>
+                <tr>
+                  <td data-row="6" data-col="1">Education (high)</td>
+                  <td data-row="6" data-col="2"></td>
+                  <td data-row="6" data-col="3">12.412***</td>
+                  <td data-row="6" data-col="4"></td>
+                  <td data-row="6" data-col="5"></td>
+                </tr>
+                <tr>
+                  <td data-row="7" data-col="1"></td>
+                  <td data-row="7" data-col="2"></td>
+                  <td data-row="7" data-col="3">(1.861)</td>
+                  <td data-row="7" data-col="4"></td>
+                  <td data-row="7" data-col="5"></td>
+                </tr>
+                <tr>
+                  <td data-row="8" data-col="1">Children in household</td>
+                  <td data-row="8" data-col="2"></td>
+                  <td data-row="8" data-col="3">-4.864**</td>
+                  <td data-row="8" data-col="4"></td>
+                  <td data-row="8" data-col="5"></td>
+                </tr>
+                <tr>
+                  <td data-row="9" data-col="1"></td>
+                  <td data-row="9" data-col="2"></td>
+                  <td data-row="9" data-col="3">(1.478)</td>
+                  <td data-row="9" data-col="4"></td>
+                  <td data-row="9" data-col="5"></td>
+                </tr>
+                <tr>
+                  <td data-row="10" data-col="1">Fixed effects</td>
+                  <td data-row="10" data-col="2">Fixed effects</td>
+                  <td data-row="10" data-col="3">Fixed effects</td>
+                  <td data-row="10" data-col="4">Fixed effects</td>
+                  <td data-row="10" data-col="5">Fixed effects</td>
+                </tr>
+                <tr>
+                  <td data-row="11" data-col="1">Country</td>
+                  <td data-row="11" data-col="2">Yes</td>
+                  <td data-row="11" data-col="3">Yes</td>
+                  <td data-row="11" data-col="4">Yes</td>
+                  <td data-row="11" data-col="5">Yes</td>
+                </tr>
+                <tr>
+                  <td data-row="12" data-col="1">Year</td>
+                  <td data-row="12" data-col="2">Yes</td>
+                  <td data-row="12" data-col="3">Yes</td>
+                  <td data-row="12" data-col="4">Yes</td>
+                  <td data-row="12" data-col="5">Yes</td>
+                </tr>
+                <tr>
+                  <td data-row="13" data-col="1">Fit statistics</td>
+                  <td data-row="13" data-col="2">Fit statistics</td>
+                  <td data-row="13" data-col="3">Fit statistics</td>
+                  <td data-row="13" data-col="4">Fit statistics</td>
+                  <td data-row="13" data-col="5">Fit statistics</td>
+                </tr>
+                <tr>
+                  <td data-row="14" data-col="1">Observations</td>
+                  <td data-row="14" data-col="2">257,721</td>
+                  <td data-row="14" data-col="3">255,440</td>
+                  <td data-row="14" data-col="4">229,122</td>
+                  <td data-row="14" data-col="5">168,547</td>
+                </tr>
+                <tr>
+                  <td data-row="15" data-col="1">R2</td>
+                  <td data-row="15" data-col="2">0.01741</td>
+                  <td data-row="15" data-col="3">0.09905</td>
+                  <td data-row="15" data-col="4">0.01434</td>
+                  <td data-row="15" data-col="5">0.04094</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+</div>
+</div>
+</figure>
+</div>
+<a class="quarto-notebook-link" id="nblink-1" href="index-preview.html">Source: Article Notebook</a></div>
+<p>First, we focus on married women of working age. Model 1, which is specified without any additional variables, suggests an increase of 1.34 working hours per week following the reform, relative to comparison countries (p &lt; 0.1). As with the following models, this effect has to be understood as the intent-to-treat effect, meaning the effect of having the possibility to opt for individual taxation, since, due to data limitations, there is no way to discern those who actually did.</p>
+<p>However, when controlling for the level of education and children living in the household in Model 2, the effect largely disappears, the estimate here is negative and statistically insignificant. This suggests that the estimate in the first model partly reflects structural differences in the education levels and household composition of the female working population of Luxembourg as compared to the control countries.</p>
+<p>Additionally, we conduct two placebo models to check H2 and confirm whether the theoretical mechanism functions as anticipated. Model 3 is based on married men and does not include control variables. The hypothetical estimate for men is assumed to be closer to zero. As a main primary earner, the effects of substitution and income are expected to offset each other. Contrary to this expectation, the model shows that the reform is associated with a decrease of 2.19 weekly working hours for married men (p &lt; 0.1). Given that the effect here is even larger in magnitude than in Model 1, there seems to be a shift in working hours around the treatment period that is affecting both men and women.</p>
+<p>Lastly, Model 4 focuses on unmarried women. Since they cannot file their taxes jointly, they are not supposed to be affected by the reform. Therefore, any substantial change in working hours would suggest that the shifts are caused by something other than the reform. While the model shows a close-to-zero effect, this result is not statistically significant. Overall, our models cannot demonstrate that the tax reform has increased the working hours of women.</p>
+<div id="cell-fig-trend" class="cell">
+<div class="cell-output-display">
+<div id="fig-trend" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-trend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/trend-plot.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Hours worked of married women (aged 20-55)"><img src="images/trend-plot.png" class="img-fluid figure-img" width="666"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-trend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Hours worked of married women (aged 20-55)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>To further substantiate findings from our models, we scrutinize the overall trends of the outcome variable in both Luxembourg and the control countries. The growth of female weekly working hours in those countries is shown in Figure 1. It shows that the working hours of women had already begun to increase substantially in 2013, long before the tax reform. In comparison, the working hours in the control countries increased subtly during the same period. Only Ireland shows a comparable trend. As discussed, this kind of diverging trend violates the parallel trends assumption, which must be upheld in order to derive causal conclusions from the model results. While women’s working hours in Luxembourg briefly continue to increase following the reform, the trend then slows down and is even reversed after 2021. However, our results do not allow us to make credible claims about the causal relationship between the reform and this trend.</p>
+</section>
+<section id="discussion" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="discussion"><span class="header-section-number">6</span> Discussion</h2>
+<p>Our analysis could not show that the introduction of optional individual taxation for married couples in Luxembourg has a significant impact on the average working hours of women. Contrary to the theoretical prediction and previous studies <span class="citation" data-cites="selin2014 kaliskova2014 crossley2007">(<a href="#ref-crossley2007" role="doc-biblioref">Crossley &amp; Jeon, 2007</a>; <a href="#ref-kaliskova2014" role="doc-biblioref">Kalíšková, 2014</a>; <a href="#ref-selin2014" role="doc-biblioref">Selin, 2014</a>)</span>, female labor supply does not appear to be increasing. These results offer several points for discussion:</p>
+<p>First, it sheds light on factors endogenous to the tax reform. The tax reform seems not strong enough to change individual behaviors. Rather, the control variables, i.e.&nbsp;the level of education and the presence of children in the household, are expected to play a significant role according to our model results. When these structural factors are translated into policies that facilitate female employment, such as child daycare <span class="citation" data-cites="selin2014">(<a href="#ref-selin2014" role="doc-biblioref">Selin, 2014</a>)</span>, this would offset the opportunity cost of staying in joint taxation. It is therefore worth noting that these confounding factors become more salient in this case.</p>
+<p>Second, the findings could be subject to biases related to individual behaviors. Our case builds hypotheses based on the assumption that individuals are rational and utility-maximizing. However, an increase in working hours might not be an optimal choice for some of them. For instance, a decision to get married can be predicated on whether they benefit from the tax reform. The income gap between partners can also be a factor in the decision to work more. In this sense, our model mechanism does not properly represent the sample individuals.</p>
+<p>Additionally, some exogenous factors matter. The Covid pandemic, which occurred relatively soon after the reform, changed the economic situation dramatically by freezing labor markets. Therefore, a change in working hours has been contingent upon not only the tax reform, but also some policies to handle the pandemic, which makes it more difficult to predict the pure impact of the treatment.</p>
+<p>However, these considerations remain hypothetical, since it is not possible to make any causal claims based on the results of our study. As we can observe in the pre-trends graph, the analysis does not guarantee its findings since it violates the parallel assumption. The fundamental issue is that there is no appropriate country sample, except Ireland, to compare with Luxembourg. From 2012 to 2017, the graph shows a steep rise before the tax reform. This indicates that there were other factors causing an increase in female working hours. Luxembourg introduced two major family policy reforms that might have boosted female working hours: childcare in 2009 and parental leave in 2016. Hence, the effect of these policies should be taken into account along with the tax reform in this period.</p>
+<p>Taken together, prospective studies could further explore whether the reform towards optional individual taxation has any causal effect considering the above aspects. This might be achieved by focusing on how many individuals actually take up individual taxation and under what conditions. Another open question is what causes a divergent trend that yields the working hours of women to rise more strongly than in other countries, therefore making Luxembourg an outlier compared to other countries.</p>
+</section>
+<section id="conclusion" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">7</span> Conclusion</h2>
+<p>This paper aims to explore the possible effect of the 2018 reform in Luxembourg, which added individual taxation as an option to the existing marital splitting system. We hypothesized that the reform would lead to an increase in female labour supply as measured by a positive change in weekly working hours. To test whether there is a causal relationship between the reform and average female working hours, we applied a difference-in-differences approach to multiple countries, using cross-sectional data from the Luxembourg Income Study.</p>
+<p>The findings of our first baseline model showed a statistically significant positive estimate for working hours of the treatment group, married women. When including the control variables on education and children, the effect disappeared. Results from our robustness checks showed an unexpected negative effect on male working hours and a close-to-zero effect for unmarried women, which was closer to our expectations from the theoretical argument.</p>
+<p>A possible interpretation is that the optional design of the reform step may create weaker incentives for secondary earners to increase their working hours and generate a higher individual income that could be taxed less, depending on the spouses’ income and the tax brackets they are placed in. Since we did not filter by take-up, the sample also includes couples who continued the marital splitting. This is especially beneficial for couples with unequal earnings and therefore could remain attractive, also since the secondary earner may have specialized less in paid labor over time.</p>
+<p>Most problematic when it comes to limitations is the parallel trends assumption not being convincingly fulfilled. Female working hours were already strongly increasing before the reform year in comparison to most countries included. Additionally, other unobserved factors due to the effects of the Covid pandemic might distort our estimate of the tax reform.</p>
+<p>Overall, we could not identify convincing evidence that the introduction of optional individual taxation has a significant impact on female working hours. However, the issue remains relevant, as countries such as Germany continue to maintain joint taxation for married couples with the possibility to opt out. Moreover, with individual taxation becoming mandatory for newly married couples in Luxembourg from 2028, future research will have the opportunity to examine whether a more comprehensive shift toward individual taxation leads to significant positive changes in female labor market activity.</p>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-alesina2011" class="csl-entry" role="listitem">
+Alesina, A., Ichino, A., &amp; Karabarbounis, L. (2011). Gender-<span>Based Taxation</span> and the <span>Division</span> of <span>Family Chores</span>. <em>American Economic Journal: Economic Policy</em>, <em>3</em>(2), 1–40. <a href="https://www.jstor.org/stable/41238092">https://www.jstor.org/stable/41238092</a>
+</div>
+<div id="ref-becker1974" class="csl-entry" role="listitem">
+Becker, G. S. (1974). A <span>Theory</span> of <span>Marriage</span>: <span>Part II</span>. <em>Journal of Political Economy</em>, <em>82</em>, S11–S26. <a href="https://doi.org/10.1086/260287">https://doi.org/10.1086/260287</a>
+</div>
+<div id="ref-bick2017" class="csl-entry" role="listitem">
+Bick, A., &amp; Fuchs-Schündeln, N. (2017). Quantifying the <span>Disincentive Effects</span> of <span>Joint Taxation</span> on <span>Married Women</span>’s <span>Labor Supply</span>. <em>American Economic Review</em>, <em>107</em>(5), 100–104. <a href="https://doi.org/10.1257/aer.p20171063">https://doi.org/10.1257/aer.p20171063</a>
+</div>
+<div id="ref-bosco2025" class="csl-entry" role="listitem">
+Bosco, B., &amp; Maranzano, P. (2025). A concise guide to <span class="nocase">Difference-in-Differences</span> methods for economists with applications to taxation, regulation, and environment. <em>SSRN Electronic Journal</em>. <a href="https://doi.org/10.2139/ssrn.5187998">https://doi.org/10.2139/ssrn.5187998</a>
+</div>
+<div id="ref-busso2015" class="csl-entry" role="listitem">
+Busso, M., &amp; Romero Fonseca, D. (2015). Determinants of female labor force participation. In L. Gasparini &amp; M. Marchionni (Eds.), <em>Briding gender gaps? <span>The</span> rise and deceleration of female labor force participation in <span>Latin America</span></em> (pp. 199–260). Universidad Nacional de La Plata. <a href="https://sedici.unlp.edu.ar/bitstream/handle/10915/65404/Documento_completo.pdf-PDFA.pdf">https://sedici.unlp.edu.ar/bitstream/handle/10915/65404/Documento_completo.pdf-PDFA.pdf</a>
+</div>
+<div id="ref-callaway2022" class="csl-entry" role="listitem">
+Callaway, B. (2022). Difference-in-<span>Differences</span> for <span>Policy Evaluation</span>. In K. F. Zimmermann (Ed.), <em>Handbook of <span>Labor</span>, <span>Human Resources</span> and <span>Population Economics</span></em> (pp. 1–61). Springer International Publishing. <a href="https://doi.org/10.1007/978-3-319-57365-6_352-1">https://doi.org/10.1007/978-3-319-57365-6_352-1</a>
+</div>
+<div id="ref-crossley2007" class="csl-entry" role="listitem">
+Crossley, T. F., &amp; Jeon, S. (2007). Joint <span>Taxation</span> and the <span>Labour Supply</span> of <span>Married Women</span>: <span>Evidence</span> from the <span>Canadian Tax Reform</span> of 1988*. <em>Fiscal Studies</em>, <em>28</em>(3), 343–365. <a href="https://doi.org/10.1111/j.1475-5890.2007.00059.x">https://doi.org/10.1111/j.1475-5890.2007.00059.x</a>
+</div>
+<div id="ref-doorley2018" class="csl-entry" role="listitem">
+Doorley, K. (2018). Taxation, <span>Work</span> and <span>Gender Equality</span> in <span>Ireland</span>. <em>SSRN Electronic Journal</em>. <a href="https://doi.org/10.2139/ssrn.3177369">https://doi.org/10.2139/ssrn.3177369</a>
+</div>
+<div id="ref-edlund2002" class="csl-entry" role="listitem">
+Edlund, L., &amp; Pande, R. (2002). Why <span>Have Women Become Left-Wing</span>? <span>The Political Gender Gap</span> and the <span>Decline</span> in <span>Marriage</span>. <em>The Quarterly Journal of Economics</em>, <em>117</em>(3), 917–961. <a href="https://doi.org/10.1162/003355302760193922">https://doi.org/10.1162/003355302760193922</a>
+</div>
+<div id="ref-euromod2022" class="csl-entry" role="listitem">
+El Mashlohi, A., Garrido Perez, A., Genevois, A.-S., Islam, N., &amp; Montes-Viñas, A. (2026). <em><span>EUROMOD</span> country report: <span>Luxembourg</span> 2022-2025</em> (L. Manso, Ed.). Publications Office of the European Union. <a href="https://data.europa.eu/doi/10.2760/8112311">https://data.europa.eu/doi/10.2760/8112311</a>
+</div>
+<div id="ref-hausman1985" class="csl-entry" role="listitem">
+Hausman, J. A. (1985). Taxes and labor supply. <em>Handbook of Public Economics</em>, <em>1</em>, 213–263. <a href="https://ideas.repec.org//h/eee/pubchp/1-04.html">https://ideas.repec.org//h/eee/pubchp/1-04.html</a>
+</div>
+<div id="ref-herold2025" class="csl-entry" role="listitem">
+Herold, E., Koch, L., &amp; Neisser, C. (2025). <em>Joint <span>Taxation</span> and <span>Intra-Household Inequality</span>: <span>Evidence</span> from <span>Same-Sex Couples</span></em>.
+</div>
+<div id="ref-islam2020" class="csl-entry" role="listitem">
+Islam, N., Doorley, K., &amp; Flood, L. (2020). Making the <span>Switch From Joint</span> to <span>Individual Taxation</span> in <span>Luxembourg</span>. <span>Cost</span>, <span>Behavioural Response</span> and <span>Welfare Effects</span>. <em>SSRN Electronic Journal</em>. <a href="https://doi.org/10.2139/ssrn.3593263">https://doi.org/10.2139/ssrn.3593263</a>
+</div>
+<div id="ref-iversen2006" class="csl-entry" role="listitem">
+Iversen, T., &amp; Rosenbluth, F. (2006). The <span>Political Economy</span> of <span>Gender</span>: <span>Explaining Cross</span>‐<span>National Variation</span> in the <span>Gender Division</span> of <span>Labor</span> and the <span>Gender Voting Gap</span>. <em>American Journal of Political Science</em>, <em>50</em>(1), 1–19. <a href="https://doi.org/10.1111/j.1540-5907.2006.00166.x">https://doi.org/10.1111/j.1540-5907.2006.00166.x</a>
+</div>
+<div id="ref-kaliskova2014" class="csl-entry" role="listitem">
+Kalíšková, K. (2014). Labor supply consequences of family taxation: <span>Evidence</span> from the <span>Czech Republic</span>. <em>Labour Economics</em>, <em>30</em>, 234–244. <a href="https://doi.org/10.1016/j.labeco.2014.04.010">https://doi.org/10.1016/j.labeco.2014.04.010</a>
+</div>
+<div id="ref-lalumia2008" class="csl-entry" role="listitem">
+LaLumia, S. (2008). The effects of joint taxation of married couples on labor supply and non-wage income. <em>Journal of Public Economics</em>, <em>92</em>(7), 1698–1719. <a href="https://doi.org/10.1016/j.jpubeco.2008.01.009">https://doi.org/10.1016/j.jpubeco.2008.01.009</a>
+</div>
+<div id="ref-leduc2025" class="csl-entry" role="listitem">
+Leduc, K., &amp; Sierminska, E. (2025). <em>The changing labor force and gender pay gap in <span>Luxembourg</span></em>. Luxembourg Institute of Socio-Economic Research. <a href="https://liser.elsevierpure.com/ws/portalfiles/portal/73850961/policy-brief_01_v2.pdf">https://liser.elsevierpure.com/ws/portalfiles/portal/73850961/policy-brief_01_v2.pdf</a>
+</div>
+<div id="ref-ministeredesfinances2026" class="csl-entry" role="listitem">
+Ministère des Finances. (2026). <em>"<span>Mateneen</span>. <span>Fir</span> all <span>Famill</span>. <span>Fir</span> all <span>Kand</span>.": Le <span>Premier</span> ministre <span>Luc Frieden</span> et les ministres <span>Gilles Roth</span>, <span>Claude Meisch</span> et <span>Max Hahn</span> présentent un vaste paquet de mesures en faveur des familles et des enfants</em>. Le gouvernement luxembourgeois. <a href="https://mfin.gouvernement.lu/fr/actualites.gouvernement2024%2Bfr%2Bactualites%2Btoutes_actualites%2Bcommuniques%2B2026%2B01-janvier%2B06-presentation-paquet-mesures.html">https://mfin.gouvernement.lu/fr/actualites.gouvernement2024%2Bfr%2Bactualites%2Btoutes_actualites%2Bcommuniques%2B2026%2B01-janvier%2B06-presentation-paquet-mesures.html</a>
+</div>
+<div id="ref-samuelson1938" class="csl-entry" role="listitem">
+Samuelson, P. A. (1938). <em>A <span>Note</span> on the <span>Pure Theory</span> of <span>Consumer</span>’s <span>Behaviour</span></em>. <em>5</em>(17). <a href="https://www.jstor.org/stable/2548836">https://www.jstor.org/stable/2548836</a>
+</div>
+<div id="ref-selin2014" class="csl-entry" role="listitem">
+Selin, H. (2014). The rise in female employment and the role of tax incentives. <span>An</span> empirical analysis of the <span>Swedish</span> individual tax reform of 1971. <em>International Tax and Public Finance</em>, <em>21</em>(5), 894–922. <a href="https://doi.org/10.1007/s10797-013-9283-y">https://doi.org/10.1007/s10797-013-9283-y</a>
+</div>
+<div id="ref-stock2020" class="csl-entry" role="listitem">
+Stock, J. H. (2020). <em>Introduction to econometrics</em>. Pearson.
+</div>
+<div id="ref-wing2018" class="csl-entry" role="listitem">
+Wing, C., Simon, K., &amp; Bello-Gomez, R. A. (2018). Designing <span>Difference</span> in <span>Difference Studies</span>: <span>Best Practices</span> for <span>Public Health Policy Research</span>. <em>Annual Review of Public Health</em>, <em>39</em>(1), 453–469. <a href="https://doi.org/10.1146/annurev-publhealth-040617-013507">https://doi.org/10.1146/annurev-publhealth-040617-013507</a>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="declaration-of-originality" class="level2 unnumbered unlisted">
+<h2 class="unnumbered unlisted anchored" data-anchor-id="declaration-of-originality">Declaration of Originality</h2>
+<p>We hereby certify that we have written the submitted seminar paper independently, have used no sources or aids other than those indicated, and have clearly identified any passages taken from them. All aids used are listed in the table below. When using Large Language Models (LLM), we have archived the entire interaction history related to the submitted paper and can present it upon request. This seminar paper has not been submitted in this or a similar form in any other course. We are aware that I may be expelled from the university in cases of serious plagiarism.<br>
+<br>
+</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 84%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Aid.</th>
+<th>Purpose of use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DeepL</td>
+<td>Language revision</td>
+</tr>
+<tr class="even">
+<td>Claude</td>
+<td>Language and formal revision | Debugging statistical code regarding its usage on the LIS code plattform</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+<br>
+Munich, August 31, 2026<br>
+<br>
+</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>
